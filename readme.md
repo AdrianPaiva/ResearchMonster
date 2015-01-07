@@ -1,3 +1,6 @@
+**Make you have COMPOSER installed, simply navigate to the project directory, right click and select use composer here or use the command line in PHPstorm**
+
+
 **For the database make sure to use migrations instead of using phpmyadmin to work on the database**!
 
 simply use "php artisan migrate" after you create an empty database in mysql named "researchmonster"
