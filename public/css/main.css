@@ -1,0 +1,51 @@
+.mainTitle
+{
+    margin-right: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: medium;
+    color: #515151;
+
+
+}
+.nav.navbar-nav.brand
+{
+    overflow: visible;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.form-login {
+    background-color: #EEEEEE;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    margin-top: 25%;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+#homeJumbotron
+{
+    background-image: url(../images/blue_green2.jpg);
+    background-size: cover;
+
+}
+.feature {
+    background-color: #EEEEEE;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0px 1px 4px #4C74D9;
+
+}
+.glyphicon.glyphicon-search
+{
+    color: #00B4FF;
+}
