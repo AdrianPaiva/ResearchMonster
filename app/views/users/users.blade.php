@@ -40,22 +40,22 @@
                     <table class="table table-striped table-hover ">
                       <thead>
                         <tr>
-                          <th>#</th>
+                          <th>ID</th>
                           <th>Name</th>
-                          <th>Column heading</th>
+                          <th>Program</th>
                           <th>Column heading</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
+                          <td>100888999</td>
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
                           <td><a href="#" class="btn-lg btn-success pull-right"> View Profile </a></td>
                         </tr>
                         <tr>
-                          <td>2</td>
+                          <td>20000000</td>
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
