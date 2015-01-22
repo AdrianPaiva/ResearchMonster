@@ -1,6 +1,6 @@
-**Make you have COMPOSER and xampp installed, simply navigate to the project directory, right click and select use composer here or use the command line in PHPstorm**
+**Make you have COMPOSER and xampp installed, simply navigate to inside the project directory, right click on empty space and select use composer here or use the command line in PHPstorm**
 
-**You also need to run the "composer install" command the once after you install the project****
+**You also need to run the "composer install" command once after you install the project****
 
 **For the database make sure to use migrations instead of using phpmyadmin to work on the database**!
 
