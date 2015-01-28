@@ -12,6 +12,10 @@
   <br>
     @if(Auth::check())
         <h2>logged in!</h2>
+
+        @if(Auth::user()->role_id == 1)
+            <h2>Researcher!!!</h2>
+        @endif
     @endif
   <p><a class="btn btn-primary btn-lg ">View Projects</a></p>
 

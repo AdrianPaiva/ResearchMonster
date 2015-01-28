@@ -43,7 +43,7 @@
                           <th>ID</th>
                           <th>Name</th>
                           <th>Program</th>
-                          <th>Column heading</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -51,14 +51,14 @@
                           <td>100888999</td>
                           <td>Column content</td>
                           <td>Column content</td>
-                          <td>Column content</td>
+
                           <td><a href="#" class="btn-lg btn-success pull-right"> View Profile </a></td>
                         </tr>
                         <tr>
                           <td>20000000</td>
                           <td>Column content</td>
                           <td>Column content</td>
-                          <td>Column content</td>
+
                           <td><a href="#" class="btn-lg btn-success pull-right"> View Profile </a></td>
                         </tr>
 

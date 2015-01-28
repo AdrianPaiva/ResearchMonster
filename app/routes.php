@@ -25,6 +25,7 @@ Route::get('login', function()
 Route::post('login', 'LoginController@doLogin');
 Route::get('logout', 'LoginController@doLogout');
 
+
 Route::get('dashboard/notifications', 'NotificationController@showNotifications');
 Route::get('dashboard/profile','ProfileController@showProfile');
 

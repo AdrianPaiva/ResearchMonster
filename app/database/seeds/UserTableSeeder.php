@@ -10,6 +10,7 @@ class UserTableSeeder extends Seeder
 
             'userId'    => 123456789,
             'password' => Hash::make('awesome'),
+            'role_id' => 1
         ));
     }
 
