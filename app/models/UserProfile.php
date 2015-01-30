@@ -8,9 +8,10 @@ class UserProfile extends Eloquent
     public $timestamps = false;
     protected $table = "user_profiles";
 
-    public function UserProfile()
+    /*
+    public function user()
     {
-        return $this->hasOne('UserProfile', 'userId');
+        return $this->belongsTo('User', 'userId','userId');
     }
-
+    */
 }

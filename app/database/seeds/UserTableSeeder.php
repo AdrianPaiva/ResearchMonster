@@ -9,9 +9,12 @@ class UserTableSeeder extends Seeder
         User::create(array(
 
             'userId'    => 123456789,
-            'password' => Hash::make('awesome'),
-            'role_id' => 1
+            'password' => Hash::make('awesome')
+
+
         ));
+
+
     }
 
 }

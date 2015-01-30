@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DropColsFromUsers extends Migration {
+class DropTables extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,22 @@ class DropColsFromUsers extends Migration {
 	 */
 	public function up()
 	{
+        Schema::table('roles', function($table)
+        {
+            $table->dropIfExists('roles');
+
+        });
+
+        Schema::table('user_profiles', function($table)
+        {
+            $table->dropIfExists('user_profiles');
+
+        });
+
         Schema::table('users', function($table)
         {
-            $table->dropColumn(array('email', 'program', 'firstName','lastName','picture','summary','experience','skills','attachment1', 'attachment2'));
+            $table->dropIfExists('users');
+
         });
 	}
 

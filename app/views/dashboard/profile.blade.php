@@ -5,12 +5,13 @@
 <div class="row">
     @include('dashboard/navPartial')
 
+
     <div class="col-xs-10">
             <img class="img-responsive col-xs-3" src="../images/default-profile.jpg">
-                    <h4>Adrian Paiva</h4>
+                    <h4>{{$profile->firstName or "First Name"}}</h4>
                     <br>
-                    <p>T127 Computer Programmer Analyst</p>
-                    <p>email@gmail.com</p>
+                    <p>{{$profile->program or "T127 Computer Programmer Analyst"}}</p>
+                    <p>{{$profile->email or "email@gmail.com"}}</p>
                     <br>
                     <br>
     </div>

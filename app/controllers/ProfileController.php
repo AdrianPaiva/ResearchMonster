@@ -5,8 +5,15 @@ class ProfileController extends BaseController
     public function showProfile()
     {
         $title = "Profile";
+        if(Auth::check())
+        {
+            $userId = Auth::id();
+            $user = User::find($userId);
+            $profile = $user->profile;
 
-        return View::make("dashboard/profile")->with("title",$title);
+            return View::make("dashboard/profile")->with("title",$title)->with('profile',$profile);
+        }
+
     }
     public function showEditProfile()
     {
