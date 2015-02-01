@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-        $title = "home";
+        $title = "GBC Research Monster";
 		return View::make('home')->with("title",$title);
 	}
 

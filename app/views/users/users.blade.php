@@ -8,7 +8,7 @@
 
 
            <div class='list-group'>
-           <a style="color:white" class="list-group-item btn-success disabled">Users </a>
+           <a style="color:white" class="list-group-item btn-warning disabled">Users </a>
              <a href="#" class="list-group-item active">All Users </a>
              <a href="#" class="list-group-item">Sort Option </a>
              <a href="#" class="list-group-item">Sort Option </a>
@@ -52,21 +52,23 @@
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="#" class="btn-lg btn-success pull-right"> View Profile </a></td>
+                          <td><a href="#" class="btn-lg btn-warning pull-right"> View Profile </a></td>
                         </tr>
                         <tr>
                           <td>20000000</td>
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="#" class="btn-lg btn-success pull-right"> View Profile </a></td>
+                          <td><a href="#" class="btn-lg btn-warning pull-right"> View Profile </a></td>
                         </tr>
 
                       </tbody>
                     </table>
+                    <br>
+                    <br>
+                    <br>
 
-
-                   <div class="navbar-fixed-bottom col-xs-10 col-md-offset-5">
+                   <div class=" col-xs-10 col-md-offset-3">
                                        <ul class="pagination pagination-lg">
                                          <li><a href="#">«</a></li>
                                          <li class="active"><a href="#">1</a></li>

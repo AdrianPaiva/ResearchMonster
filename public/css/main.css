@@ -5,7 +5,7 @@
     text-transform: uppercase;
     font-size: medium;
     color: #515151;
-
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 
 }
 .nav.navbar-nav.brand
@@ -13,6 +13,7 @@
     overflow: visible;
     padding-left: 0;
     padding-top: 0;
+
 }
 
 .form-login {
@@ -29,8 +30,8 @@
 }
 #homeJumbotron
 {
-    background-image: url(../images/blue_green2.jpg);
-    background-size: cover;
+    background-image: url(../images/gbc_blank.png);
+    background-size: 100% 100%;
 
 }
 .feature {
@@ -48,4 +49,9 @@
 .glyphicon.glyphicon-search
 {
     color: #00B4FF;
+}
+.jumbotronHeader
+{
+    color: #ffffff;
+
 }
