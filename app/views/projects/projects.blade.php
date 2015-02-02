@@ -58,24 +58,26 @@
                     <br>
                     <br>
 
-                    <div class=" col-xs-10 col-md-offset-3">
-                                                           <ul class="pagination pagination-lg">
-                                                             <li><a href="#">«</a></li>
-                                                             <li class="active"><a href="#">1</a></li>
-                                                             <li><a href="#">2</a></li>
-                                                             <li><a href="#">3</a></li>
-                                                             <li><a href="#">»</a></li>
-                                                           </ul>
-                                       </div>
 
                 </div>
         	</div>
         </div>
 
+</div>
+
+<div class="row">
+    <div class="pager2 text-center">
+                                           <ul class="pagination pagination-lg">
+                                             <li><a href="#">«</a></li>
+                                             <li class="active"><a href="#">1</a></li>
+                                             <li><a href="#">2</a></li>
+                                             <li><a href="#">3</a></li>
+                                             <li><a href="#">»</a></li>
+                                           </ul>
+    </div>
 
 
 </div>
-
 
 
 @stop
