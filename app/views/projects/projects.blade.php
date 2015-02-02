@@ -24,7 +24,8 @@
         <div class="container">
         	<div class="row">
         		<div class="col-md-3 col-md-offset-3">
-                    <div class="input-group  ">
+
+                    <div class="input-group">
                       <input type="text" class="form-control">
                       <span class="input-group-btn">
                       <button class="btn btn-default" type="button">
@@ -32,6 +33,7 @@
                       </button>
                       </span>
                      </div><!-- /input-group -->
+
                 </div>
 
                 <br>
@@ -65,10 +67,12 @@
                           <td><a href="#" class="btn-lg btn-warning pull-right"> View  </a></td>
                         </tr>
 
+
                       </tbody>
                     </table>
                     <br>
                     <br>
+
                     <div class=" col-xs-10 col-md-offset-3">
                                                            <ul class="pagination pagination-lg">
                                                              <li><a href="#">«</a></li>
@@ -77,7 +81,8 @@
                                                              <li><a href="#">3</a></li>
                                                              <li><a href="#">»</a></li>
                                                            </ul>
-                    </div>
+                                       </div>
+
                 </div>
         	</div>
         </div>

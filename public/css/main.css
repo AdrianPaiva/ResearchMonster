@@ -55,3 +55,6 @@
     color: #ffffff;
 
 }
+nav.navbar-fixed-bottom.text-center{
+    position: fixed;
+}
