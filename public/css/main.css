@@ -55,6 +55,7 @@
     color: #ffffff;
 
 }
-nav.navbar-fixed-bottom.text-center{
-    position: fixed;
+.progress
+{
+    opacity: 0.2;
 }

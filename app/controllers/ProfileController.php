@@ -4,7 +4,7 @@ class ProfileController extends BaseController
 {
     public function showProfile()
     {
-        $title = "Profile";
+        $title = "My Profile";
         if(Auth::check())
         {
             $userId = Auth::id();

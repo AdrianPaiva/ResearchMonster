@@ -16,13 +16,15 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::get('projects', 'ProjectController@showAllProjects');
-Route::get('users', 'UserController@showAllUsers');
 
-Route::get('login', function()
+Route::get('users', 'UserController@showAllUsers');
+Route::get('users/viewProfile/{id}', 'UserController@showUserProfile');
+
+Route::get('login', function() // this shows the login form
 {
     return View::make('login')->with('title',"Login");
 });
-Route::post('login', 'LoginController@doLogin');
+Route::post('login', 'LoginController@doLogin'); // this processes the login
 Route::get('logout', 'LoginController@doLogout');
 
 
@@ -36,6 +38,9 @@ Route::get('dashboard/addProject', function()
 {
     return View::make('dashboard.addProject')->with('title',"Add Project");
 });
+
+Route::get('projects/viewProject/{id}','ProjectController@viewProject');
+
 
 /* You can also do this to directly route to pages without a controller
 

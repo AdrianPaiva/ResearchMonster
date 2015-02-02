@@ -4,19 +4,8 @@
 
 <div class='row'>
 
-       <div class='col-md-2'>
 
-
-           <div class='list-group'>
-           <a style="color:white" class="list-group-item btn-warning disabled">Users </a>
-             <a href="#" class="list-group-item active">All Users </a>
-             <a href="#" class="list-group-item">Sort Option </a>
-             <a href="#" class="list-group-item">Sort Option </a>
-             <a href="#" class="list-group-item">Sort Option </a>
-           </div>
-           <br>
-
-       </div>
+        @include('users/userNav')
 
         <div class="container">
         	<div class="row">
@@ -52,14 +41,14 @@
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="#" class="btn-lg btn-warning pull-right"> View Profile </a></td>
+                          <td><a href="users/viewProfile/1" class="btn-lg btn-warning pull-right"> View Profile </a></td>
                         </tr>
                         <tr>
                           <td>20000000</td>
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="#" class="btn-lg btn-warning pull-right"> View Profile </a></td>
+                          <td><a href="users/viewProfile/1" class="btn-lg btn-warning pull-right"> View Profile </a></td>
                         </tr>
 
                       </tbody>

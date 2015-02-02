@@ -4,22 +4,7 @@
 
 <div class='row'>
 
-       <div class='col-md-2'>
-
-           <div class='list-group'>
-             <a href="#" style="color:white" class="list-group-item btn-warning disabled">Projects </a>
-             <a href="#" class="list-group-item active">All Projects </a>
-             <a href="#" class="list-group-item">Recently Added </a>
-             <a href="#" class="list-group-item">Sort Option </a>
-             <a href="#" class="list-group-item">Sort Option </a>
-           <br>
-              <a href="#" style="color:white" class="list-group-item btn-warning disabled">My Projects </a>
-              <a href="#" class="list-group-item">All My Projects </a>
-              <a href="#" class="list-group-item">Recent Projects </a>
-              <a href="#" class="list-group-item">Recommended Projects </a>
-
-          </div>
-       </div>
+        @include('projects/projectNav')
 
         <div class="container">
         	<div class="row">
@@ -57,7 +42,7 @@
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
-                          <td><a href="#" class="btn-lg btn-warning pull-right"> View  </a></td>
+                          <td><a href="projects/viewProject/1" class="btn-lg btn-warning pull-right"> View  </a></td>
                         </tr>
                         <tr>
                           <td>2</td>
