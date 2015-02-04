@@ -24,17 +24,17 @@
             <li><a href="/" class="active">Home</a></li>
 
             @if(Auth::check())
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/users">Users</a></li>
+                <li><a href="{{URL::to('/projects')}}">Projects</a></li>
+                <li><a href="{{URL::to('/users')}}">Users</a></li>
             @endif
 
                 <div class="nav navbar-nav navbar-right">
 
                       @if(Auth::check())
-                        <li><a href="dashboard/notifications">Dashboard <span class="label label-warning label-as-badge">3</span> </a></li>
+                        <li><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-warning label-as-badge">3</span> </a></li>
                         <li><a href="{{ URL::to('logout') }}">Logout</a></li>
                       @else
-                        <li><a href="/login">Login</a></li>
+                        <li><a href="{{URL::to('/login')}}">Login</a></li>
                         <li><a href="{{ URL::to('/register') }}">Register</a></li>
                       @endif
 
