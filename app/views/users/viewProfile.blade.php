@@ -7,7 +7,7 @@
     @include('users/userNav')
 
     <div class="col-xs-10">
-            <img class="img-responsive col-xs-3" src="/images/default-profile.jpg">
+            <img class="img-responsive col-xs-3" src="images/default-profile.jpg">
                     <h4>{{$profile->firstName or "First Name"}}</h4>
                     <br>
                     <p>{{$profile->program or "T127 Computer Programmer Analyst"}}</p>

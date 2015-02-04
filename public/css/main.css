@@ -53,6 +53,9 @@
 .jumbotronHeader
 {
     color: #ffffff;
+    font-weight: 300;
+    text-shadow: 0px 2px 3px #555;
+    opacity: 0.9;
 
 }
 .progress
@@ -63,4 +66,9 @@
 .pager2
 {
     padding-top: 150px;
+}
+.customJumbotron.jumbotron
+{
+    padding: 0px;
+    line-height: normal;
 }
