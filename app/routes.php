@@ -14,7 +14,9 @@
 
 // route to controller and function at specified URL
 
+Route::get('/', 'HomeController@showWelcome');
 Route::get('home', 'HomeController@showWelcome');
+
 Route::get('projects', 'ProjectController@showAllProjects');
 
 Route::get('users', 'UserController@showAllUsers');
