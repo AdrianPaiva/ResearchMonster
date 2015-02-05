@@ -10,6 +10,8 @@
 	{{ HTML::style('css/bootstrap.css'); }}
 
 
+
+
 </head>
 <body>
 
@@ -20,7 +22,7 @@
     	<ul class="nav navbar-nav">
 
             <a class="brand" href="/"><img class="img-circle col-xs-1 brand navbar-btn"  src="/images/gbc_small.png"></a>
-    	    <li><h3 class="mainTitle"><b class="text-warning lead">GBC</b> Research Monster</h3></li>
+    	    <li><h3 class="mainTitle"><b class="text-success lead">GBC</b> Research Monster</h3></li>
             <li><a href="/" class="active">Home</a></li>
 
             @if(Auth::check())
@@ -31,7 +33,7 @@
                 <div class="nav navbar-nav navbar-right">
 
                       @if(Auth::check())
-                        <li><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-warning label-as-badge">3</span> </a></li>
+                        <li><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-success label-as-badge">3</span> </a></li>
                         <li><a href="{{ URL::to('logout') }}">Logout</a></li>
                       @else
                         <li><a href="{{URL::to('/login')}}">Login</a></li>
@@ -53,6 +55,7 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
 </body>
 </html>

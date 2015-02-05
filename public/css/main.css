@@ -72,3 +72,22 @@
     padding: 0px;
     line-height: normal;
 }
+.btn-yellow
+{
+    background-color: #FFCC44;
+    border-color: #FFCC44;
+    color: #FFFFFF;
+}
+.btn-yellow:hover
+{
+    background-color: #FFCC44;
+    border-color: #FFCC44;
+}
+.list-group-item.btn.btn-yellow
+{
+    background-color: #FFCC44;
+}
+.text-yellow
+{
+    color :#FFCC44;
+}

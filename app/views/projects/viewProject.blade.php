@@ -20,12 +20,11 @@
                 </div>
 
                 <div class="col-xs-6">
-                     <a href="#" class="btn-lg btn-success ">Apply</a>
-                     <a href="#" class="btn-lg btn-warning ">Edit</a>
-                     <a href="#" class="btn-lg btn-danger  ">Delete</a>
-                     <br>
-                     <br>
-                     <a href="#" class="btn-lg btn-info ">Recommend Student</a>
+                     <a href="#" class="btn-sm btn-success ">Apply</a>
+                     <a href="#" class="btn-sm btn-warning ">Edit</a>
+                     <a href="#" class="btn-sm btn-danger  ">Delete</a>
+
+                     <a href="#" class="btn-sm btn-info ">Recommend Student</a>
                 </div>
 
             </div>
@@ -53,7 +52,14 @@
                              Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada,
                              integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
                           </p>
+                <hr>
+              <strong><p><u>Skills</u></p></strong>
+                <p class="btn btn-sm btn-success">PHP</p>
+                <p class="btn btn-sm btn-success">MYSQL</p>
+                <p class="btn btn-sm btn-success">PHP</p>
+                <p class="btn btn-sm btn-success">MYSQL</p>
 
+                <br><br>
           </div>
         </div>
 
@@ -67,31 +73,43 @@
 
 <div class="row">
 
-            <div class="col-xs-5 col-xs-offset-2">
+            <div class="col-xs-10 col-xs-offset-2">
                 <div class="panel panel-primary">
                           <div class="panel-heading">
-                            <h3 class="panel-title text-center">Skills</h3>
+                            <h3 class="panel-title text-center">Users</h3>
                           </div>
                      <div class="panel-body">
-                        <p class="btn btn-sm btn-success">PHP</p>
-                        <p class="btn btn-sm btn-success">MYSQL</p>
-                        <p class="btn btn-sm btn-success">PHP</p>
-                        <p class="btn btn-sm btn-success">MYSQL</p>
+                        <table class="table table-striped table-hover ">
+                                              <thead>
+                                                <tr>
+                                                  <th>ID</th>
+                                                  <th>Name</th>
+                                                  <th>Program</th>
+
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>100888999</td>
+                                                  <td>Column content</td>
+                                                  <td>Column content</td>
+
+                                                  <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>20000000</td>
+                                                  <td>Column content</td>
+                                                  <td>Column content</td>
+
+                                                  <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
+                                                </tr>
+
+                                              </tbody>
+                                            </table>
                      </div>
                  </div>
             </div>
 
-
-            <div class="col-xs-5">
-                <div class="panel panel-primary">
-                          <div class="panel-heading">
-                            <h3 class="panel-title text-center">Attachments</h3>
-                          </div>
-                     <div class="panel-body">
-
-                     </div>
-                 </div>
-            </div>
 </div>
 
 @stop

@@ -6,7 +6,7 @@
 
 
            <div class='list-group'>
-             <a style="color:white" class="list-group-item btn-warning disabled">Dashboard </a>
+             <p  class="list-group-item btn btn-yellow ">Dashboard</p>
              <a href="notifications" class="list-group-item @if( $page == "dashboard/notifications") {{'active'}} @endif">Notifications</a>
              <a href="profile" class="list-group-item @if( $page == "dashboard/profile") {{'active'}} @endif" >Profile </a>
              <a href="editProfile" class="list-group-item @if( $page == "dashboard/editProfile") {{'active'}} @endif">Edit Profile </a>

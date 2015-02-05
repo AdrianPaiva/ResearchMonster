@@ -34,7 +34,7 @@
                 <p class="text-center">Already a member?</p>
                 <br>
                 <br>
-                <a href="login" class="btn-lg btn-warning "> Login</a>
+                <a href="login" class="btn-lg btn-yellow "> Login</a>
             </div>
 
 
@@ -45,7 +45,7 @@
                   <p class="text-center">Start here to create your account</p>
                   <br>
                                   <br>
-                  <a href="register" class="btn-lg btn-warning "> Register</a>
+                  <a href="register" class="btn-lg btn-yellow "> Register</a>
                </div>
 
 

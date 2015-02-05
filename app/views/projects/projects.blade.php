@@ -11,7 +11,7 @@
         		<div class="col-md-3 col-md-offset-3">
 
                     <div class="input-group">
-                      <input type="text" class="form-control">
+                      <input type="text" placeholder="Search Projects" class="form-control">
                       <span class="input-group-btn">
                       <button class="btn btn-default" type="button">
                         <span class="glyphicon glyphicon-search "></span>
@@ -42,14 +42,14 @@
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
-                          <td><a href="projects/viewProject/1" class="btn-lg btn-warning pull-right"> View  </a></td>
+                          <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
-                          <td><a href="#" class="btn-lg btn-warning pull-right"> View  </a></td>
+                          <td><a href="#" class="btn-sm btn-success pull-right"> View Project </a></td>
                         </tr>
 
 

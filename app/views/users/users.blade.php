@@ -11,7 +11,7 @@
         	<div class="row">
         		<div class="col-md-3 col-md-offset-3">
                     <div class="input-group  ">
-                      <input type="text" class="form-control">
+                      <input type="text" placeholder="Search Users"  class="form-control">
                       <span class="input-group-btn">
                       <button class="btn btn-default" type="button">
                         <span class="glyphicon glyphicon-search"></span>
@@ -41,14 +41,14 @@
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="users/viewProfile/1" class="btn-lg btn-warning pull-right"> View Profile </a></td>
+                          <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
                         </tr>
                         <tr>
                           <td>20000000</td>
                           <td>Column content</td>
                           <td>Column content</td>
 
-                          <td><a href="users/viewProfile/1" class="btn-lg btn-warning pull-right"> View Profile </a></td>
+                          <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
                         </tr>
 
                       </tbody>

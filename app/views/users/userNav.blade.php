@@ -2,7 +2,7 @@
 
 
            <div class='list-group'>
-           <a style="color:white" class="list-group-item btn-warning disabled">Users </a>
+           <p  class="list-group-item btn btn-yellow ">Users</p>
              <a href="users" class="list-group-item active">All Users </a>
              <a href="#" class="list-group-item">Sort Option </a>
              <a href="#" class="list-group-item">Sort Option </a>
