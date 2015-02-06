@@ -30,27 +30,55 @@
                     <table class="table table-striped table-hover ">
                       <thead>
                         <tr>
-                          <th>#</th>
+
                           <th>Name</th>
                           <th>Posted By</th>
                           <th>Date Posted</th>
+                          <th>Required Skills</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
+
                           <td>Column content</td>
                           <td>Column content</td>
                           <td>Column content</td>
+                          <td>
+                            <div class="btn-group">
+                              <a href="#" class="btn btn-default">PHP</a>
+                              <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Skill</a></li>
+                                <li><a href="#">Skill</a></li>
+                                <li><a href="#">Skill</a></li>
+                                <li><a href="#">Skill</a></li>
+                              </ul>
+                            </div>
+                          </td>
                           <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
-                          <td><a href="#" class="btn-sm btn-success pull-right"> View Project </a></td>
-                        </tr>
+
+                                                <tr>
+
+                                                  <td>Column content</td>
+                                                  <td>Column content</td>
+                                                  <td>Column content</td>
+                                                  <td>
+                                                    <div class="btn-group">
+                                                      <a href="#" class="btn btn-default">MYSQL</a>
+                                                      <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                                      <ul class="dropdown-menu">
+                                                        <li><a href="#">Skill</a></li>
+                                                        <li><a href="#">Skill</a></li>
+                                                        <li><a href="#">Skill</a></li>
+                                                        <li><a href="#">Skill</a></li>
+                                                      </ul>
+                                                    </div>
+                                                  </td>
+                                                  <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
+                                                </tr>
+
+
 
 
                       </tbody>
@@ -66,14 +94,16 @@
 </div>
 
 <div class="row">
-    <div class="pager2 text-center">
-                                           <ul class="pagination pagination-lg">
-                                             <li><a href="#">«</a></li>
-                                             <li class="active"><a href="#">1</a></li>
-                                             <li><a href="#">2</a></li>
-                                             <li><a href="#">3</a></li>
-                                             <li><a href="#">»</a></li>
-                                           </ul>
+    <div class="pager2 text-center col-xs-5 col-xs-offset-4">
+                              <ul class="pagination">
+                                <li class="disabled"><a href="#">«</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">»</a></li>
+                              </ul>
     </div>
 
 

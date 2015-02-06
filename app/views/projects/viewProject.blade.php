@@ -84,7 +84,7 @@
                                                 <tr>
                                                   <th>ID</th>
                                                   <th>Name</th>
-                                                  <th>Program</th>
+                                                  <th>Email</th>
 
                                                 </tr>
                                               </thead>
@@ -92,16 +92,22 @@
                                                 <tr>
                                                   <td>100888999</td>
                                                   <td>Column content</td>
-                                                  <td>Column content</td>
+                                                   <td>Column content</td>
 
-                                                  <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
+                                                  <td>
+                                                    <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                    <a href="users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                  </td>
                                                 </tr>
                                                 <tr>
                                                   <td>20000000</td>
                                                   <td>Column content</td>
                                                   <td>Column content</td>
+                                                    <td>
+                                                       <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                       <a href="users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                    </td>
 
-                                                  <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
                                                 </tr>
 
                                               </tbody>
