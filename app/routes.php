@@ -26,9 +26,15 @@ Route::get('login', function() // this shows the login form
 {
     return View::make('login')->with('title',"Login");
 });
-Route::post('login', 'LoginController@doLogin'); // this processes the login
-Route::get('logout', 'LoginController@doLogout');
+Route::post('login', 'UserController@doLogin'); // this processes the login
+Route::get('logout', 'UserController@doLogout');
 
+Route::get('register', function() // this shows the register form
+{
+    return View::make('register')->with('title',"Register");
+});
+
+Route::post('register', 'UserController@registerUser');// this processes register
 
 Route::get('dashboard/notifications', 'NotificationController@showNotifications');
 Route::get('dashboard/profile','ProfileController@showProfile');

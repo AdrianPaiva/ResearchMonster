@@ -14,7 +14,9 @@
 
 </head>
 <body>
-
+<?php
+            $page = Route::current()->getUri();
+        ?>
 
 
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -23,21 +25,22 @@
 
             <a class="brand" href="/"><img class="img-circle col-xs-1 brand navbar-btn"  src="/images/gbc_small.png"></a>
     	    <li><h3 class="mainTitle"><b class="text-success lead">GBC</b> Research Monster</h3></li>
-            <li><a href="/" class="active">Home</a></li>
+
 
             @if(Auth::check())
-                <li><a href="{{URL::to('/projects')}}">Projects</a></li>
-                <li><a href="{{URL::to('/users')}}">Users</a></li>
+                <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>
+                <li class="@if( $page == "projects") {{'active'}} @endif"><a href="{{URL::to('/projects')}}">Projects</a></li>
+                <li class="@if( $page == "users") {{'active'}} @endif"><a href="{{URL::to('/users')}}">Users</a></li>
             @endif
 
                 <div class="nav navbar-nav navbar-right">
 
                       @if(Auth::check())
-                        <li><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-success label-as-badge">3</span> </a></li>
+                        <li class="@if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif"><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-success label-as-badge">3</span> </a></li>
                         <li><a href="{{ URL::to('logout') }}">Logout</a></li>
                       @else
-                        <li><a href="{{URL::to('/login')}}">Login</a></li>
-                        <li><a href="{{ URL::to('/register') }}">Register</a></li>
+                        <li class="@if( $page == "login") {{'active'}} @endif"><a href="{{URL::to('/login')}}">Login</a></li>
+                        <li class="@if( $page == "register") {{'active'}} @endif"><a href="{{ URL::to('/register') }}">Register</a></li>
                       @endif
 
                 </div>

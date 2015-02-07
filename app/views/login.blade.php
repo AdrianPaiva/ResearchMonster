@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-5">
 
-            <div class="form-login">
+            <div class="jumbotron">
             {{ Form::open(array('url' => 'login')) }}
                 <h4 class="text-center">Welcome back.</h4>
                 <br>
@@ -20,7 +20,7 @@
                                {{ $errors->first('userPassword') }} <h6>{{$error or " "}} </h6>
                 <br>
                 <br>
-                {{Form::submit("LOGIN",array("class" => "btn btn-primary btn-md col-md-offset-5"))}}
+                {{Form::submit("LOGIN",array("class" => "btn btn-success col-md-offset-5"))}}
                 {{ Form::close() }}
             </div>
             <h6>{{$err or " "}} </h6>
