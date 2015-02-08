@@ -51,15 +51,10 @@
 
     <br>
     <hr>
-        <div class="panel panel-default">
-               <div class="panel-heading">Attachments</div>
-               <div class="panel-body">
-                 Panel content
-               </div>
-             </div>
-
-              </div>
-            </div>
+            <h5><u>Attachments</u></h5>
+            <br>
+                <p class="btn btn-sm btn-yellow">Resume</p>
+                <p class="btn btn-sm btn-yellow">Portfolio</p>
     </div>
 
 

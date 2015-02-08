@@ -76,46 +76,108 @@
 <div class="row">
 
             <div class="col-xs-10 col-xs-offset-2">
-                <div class="panel panel-primary">
-                          <div class="panel-heading">
-                            <h3 class="panel-title text-center">Users</h3>
-                          </div>
-                     <div class="panel-body">
-                        <table class="table table-striped table-hover ">
-                                              <thead>
-                                                <tr>
-                                                  <th>ID</th>
-                                                  <th>Name</th>
-                                                  <th>Email</th>
 
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <td>100888999</td>
-                                                  <td>Column content</td>
-                                                   <td>Column content</td>
 
-                                                  <td>
-                                                    <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                    <a href="users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>20000000</td>
-                                                  <td>Column content</td>
-                                                  <td>Column content</td>
-                                                    <td>
-                                                       <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                       <a href="users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
-                                                    </td>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-primary">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title text-center">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Users in Project Name
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
 
-                                                </tr>
+                                                <table class="table table-striped table-hover ">
+                                                                      <thead>
+                                                                        <tr>
+                                                                          <th>ID</th>
+                                                                          <th>Name</th>
+                                                                          <th>Email</th>
 
-                                              </tbody>
-                                            </table>
-                     </div>
-                 </div>
+                                                                        </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                        <tr>
+                                                                          <td>100888999</td>
+                                                                          <td>Column content</td>
+                                                                           <td>Column content</td>
+
+                                                                          <td>
+                                                                            <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td>20000000</td>
+                                                                          <td>Column content</td>
+                                                                          <td>Column content</td>
+                                                                            <td>
+                                                                               <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                            </td>
+
+                                                                        </tr>
+
+                                                                      </tbody>
+                                                                    </table>
+
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-primary">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title text-center">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Recommended Users
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+
+                                                <table class="table table-striped table-hover ">
+                                                                      <thead>
+                                                                        <tr>
+                                                                          <th>ID</th>
+                                                                          <th>Name</th>
+                                                                          <th>Email</th>
+
+                                                                        </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                        <tr>
+                                                                          <td>100888999</td>
+                                                                          <td>Column content</td>
+                                                                           <td>Column content</td>
+
+                                                                          <td>
+
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td>20000000</td>
+                                                                          <td>Column content</td>
+                                                                          <td>Column content</td>
+                                                                            <td>
+
+                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                            </td>
+
+                                                                        </tr>
+
+                                                                      </tbody>
+                                                                    </table>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
             </div>
 
 </div>
