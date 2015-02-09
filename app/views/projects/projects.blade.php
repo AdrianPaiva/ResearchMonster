@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script src="../dataTables.js"></script>
+
 <div class='row'>
 
         @include('projects/projectNav')
@@ -28,7 +30,7 @@
                 <br>
 
                 <div class="col-md-10 ">
-                    <table class="table table-striped table-hover ">
+                    <table id="myTable" class="table table-striped table-hover ">
                       <thead>
                         <tr>
 

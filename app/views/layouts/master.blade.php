@@ -8,6 +8,7 @@
 
 	{{ HTML::style('css/main.css'); }}
 	{{ HTML::style('css/bootstrap.css'); }}
+	{{ HTML::style('css/jquery.dataTables.css'); }}
 
 
 </head>
@@ -56,9 +57,10 @@
 		@yield('content')
 	</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<script src="js/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+<script src="js/jquery.dataTables.js"></script>
 
 </body>
 </html>
