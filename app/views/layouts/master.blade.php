@@ -6,13 +6,14 @@
 
 	<title>{{{$title or "Title"}}}</title>
 
-	{{ HTML::style('css/main.css'); }}
 	{{ HTML::style('css/bootstrap.min.css'); }}
 	{{ HTML::style('//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css'); }}
-
+	{{ HTML::style('css/jvfloat.css'); }}
+    {{ HTML::style('css/main.css'); }}
 
 </head>
 <body>
+
 <?php
             $page = Route::current()->getUri();
         ?>
@@ -22,44 +23,38 @@
 <!-- DataTables -->
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-
+<script type="text/javascript" charset="utf8" src="js/jvfloat.min.js"></script>
 
 
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="container">
-    	<ul class="nav navbar-nav">
-
-            <a class="brand" href="/"><img class="img-circle col-xs-1 brand navbar-btn"  src="/images/gbc_small.png"></a>
+  <div class="container-fluid">
+    	<ul class="nav navbar-nav navbar-left ">
+            <a class="" href="/"><img class="img-circle col-xs-1 navbar-btn "  src="/images/gbc_small.png"></a>
     	    <li><h3 class="mainTitle"><b class="text-success lead">GBC</b> Research Monster</h3></li>
-
 
             @if(Auth::check())
                 <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>
                 <li class="@if( $page == "projects" || $page == 'projects/addProject') {{'active'}} @endif"><a href="{{URL::to('/projects')}}">Projects</a></li>
                 <li class="@if( $page == "users") {{'active'}} @endif"><a href="{{URL::to('/users')}}">Users</a></li>
             @endif
-
-                <div class="nav navbar-nav navbar-right">
-
-                      @if(Auth::check())
-                        <li class="@if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif"><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-success  label-as-badge">3</span> </a></li>
-                        <li><a href="{{ URL::to('logout') }}">Logout</a></li>
-                      @else
-                        <li class="@if( $page == "login") {{'active'}} @endif"><a href="{{URL::to('/login')}}">Login</a></li>
-                        <li class="@if( $page == "register") {{'active'}} @endif"><a href="{{ URL::to('/register') }}">Register</a></li>
-                      @endif
-
-                </div>
-
-
         </ul>
+
+         <ul class="nav navbar-nav navbar-right">
+              @if(Auth::check())
+                   <li class=" @if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif"><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label label-success  label-as-badge">3</span> </a></li>
+                   <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+              @else
+                   <li class="@if( $page == "login") {{'active'}} @endif"><a href="{{URL::to('/login')}}">Login</a></li>
+                   <li class="@if( $page == "register") {{'active'}} @endif"><a href="{{ URL::to('/register') }}">Register</a></li>
+              @endif
+         </ul>
 
 
   </div>
 
   </nav>
 
-	<div class="container">
+	<div class="container-fluid">
 		@yield('content')
 	</div>
 

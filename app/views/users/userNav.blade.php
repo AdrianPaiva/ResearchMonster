@@ -1,4 +1,4 @@
-<div class='col-md-2'>
+<div class='col-xs-2'>
 
            <div class='list-group'>
            <p  class="list-group-item btn btn-yellow ">Users</p>

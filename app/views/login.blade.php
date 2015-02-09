@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+
     <div class="row">
-        <div class="col-md-offset-3 col-md-5">
+        <div class="col-xs-4 col-xs-offset-4 jumbotron">
 
             <div class="jumbotron">
                 <div class="row ">
@@ -16,12 +16,12 @@
             {{ Form::open(array('url' => 'login')) }}
                 <h4 class="text-center">Welcome back.</h4>
                 <br>
-                {{ Form::text('userId', '', array('class' => "form-control ",'placeholder' => "User Id")) }}
+                {{ Form::text('userId', '', array('class' => "form-control float ",'placeholder' => "User ID")) }}
 
                 <br>
                                 {{ $errors->first('userId') }}
                 <br>
-                {{ Form::password('userPassword', array('class' => "form-control ",'placeholder' => "Password")) }}
+                {{ Form::password('userPassword', array('class' => "form-control float",'placeholder' => "Password")) }}
                 <br>
                                {{ $errors->first('userPassword') }} <h6>{{$error or " "}} </h6>
                 <br>
@@ -36,9 +36,11 @@
 
 
     </div>
-</div>
 
 
+<script>
+    $('.float').jvFloat();
+</script>
 
 
 @stop

@@ -3,9 +3,9 @@
 @section('content')
 
 
-<div class="container">
+
     <div class="row ">
-        <div class="col-xs-8 col-xs-offset-2 jumbotron">
+        <div class="col-xs-4 col-xs-offset-4 jumbotron">
 
             <div class="form-horizontal">
                                 <div class="row ">
@@ -40,6 +40,6 @@
 
         </div>
     </div>
-</div>
+
 
 @stop

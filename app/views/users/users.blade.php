@@ -5,7 +5,7 @@
 <div class="row">
 
         @include('users/userNav')
-           <div class="col-md-10 ">
+           <div class="col-xs-10 ">
                     <table id="table" class="table table-striped table-hover ">
                       <thead>
                         <tr>
