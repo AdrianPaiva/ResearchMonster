@@ -90,12 +90,13 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
 
-                                                <table class="table table-striped table-hover ">
+                                                <table id="userTable" class="table table-striped table-hover ">
                                                                       <thead>
                                                                         <tr>
                                                                           <th>ID</th>
                                                                           <th>Name</th>
                                                                           <th>Email</th>
+                                                                          <th></th>
 
                                                                         </tr>
                                                                       </thead>
@@ -138,13 +139,13 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
 
-                                                <table class="table table-striped table-hover ">
+                                                <table id="recommendedTable" class="table table-striped table-hover ">
                                                                       <thead>
                                                                         <tr>
                                                                           <th>ID</th>
                                                                           <th>Name</th>
                                                                           <th>Email</th>
-
+                                                                          <th></th>
                                                                         </tr>
                                                                       </thead>
                                                                       <tbody>
@@ -158,16 +159,7 @@
                                                                             <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
                                                                           </td>
                                                                         </tr>
-                                                                        <tr>
-                                                                          <td>20000000</td>
-                                                                          <td>Column content</td>
-                                                                          <td>Column content</td>
-                                                                            <td>
 
-                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
-                                                                            </td>
-
-                                                                        </tr>
 
                                                                       </tbody>
                                                                     </table>
@@ -182,4 +174,16 @@
 
 </div>
 
+
+
+<script type="text/javascript" >
+    $(document).ready(function () {
+        $('#userTable').DataTable();
+    });
+</script>
+<script type="text/javascript" >
+    $(document).ready(function () {
+        $('#recommendedTable').DataTable();
+    });
+</script>
 @stop
