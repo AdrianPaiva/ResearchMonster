@@ -8,6 +8,10 @@
         <div class="col-xs-8 col-xs-offset-2 jumbotron">
 
             <div class="form-horizontal">
+                                <div class="row ">
+                                    <img class="img-responsive img-circle col-xs-6 col-xs-offset-3"  src="/images/gbc_small.png">
+                                </div>
+            <br>
             {{ Form::open(array('url' => 'register')) }}
                 <h4 class="text-center">Welcome To GBC Research Monster.</h4>
                 <br>

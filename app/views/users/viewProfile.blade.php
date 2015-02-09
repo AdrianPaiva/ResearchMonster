@@ -35,12 +35,12 @@
   <hr>
             <h5><u>Experience</u></h5>
             <br>
-            <p>
-                - Lorem ipsum dolor sit amet <br>
-                - Lorem ipsum dolor sit amet <br>
-                - Lorem ipsum dolor sit amet <br>
-                - Lorem ipsum dolor sit amet <br>
-            </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
+
+                        Nulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.
+                        Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.</p>
+
      <br>
           <hr>
                  <h5><u>Skills</u></h5>
