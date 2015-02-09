@@ -9,7 +9,7 @@
         @include('projects/projectNav')
 
                 <div class="col-md-10 ">
-                    <table id="table" class="table table-striped table-hover ">
+                    <table id="table" class="table table-bordered table-striped table-responsive table-hover ">
                       <thead>
                         <tr>
 
@@ -64,6 +64,7 @@
                            </td>
                            <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
                          </tr>
+
 
                       </tbody>
                     </table>

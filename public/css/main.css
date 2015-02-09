@@ -31,6 +31,7 @@
 #homeJumbotron
 {
     background-image: url(../images/gbc_blank.png);
+    
     background-size: 100% 100%;
 
 }
@@ -71,6 +72,7 @@
 {
     padding: 0px;
     line-height: normal;
+
 }
 .btn-yellow
 {
@@ -90,6 +92,24 @@
 .text-yellow
 {
     color :#FFCC44;
+}
+.panel-yellow
+{
+    color: #FFFFFF;
+    background-color: #FFCC44;
+}
+
+.panel-primary> .panel-heading {
+   opacity: 0.8;
+}
+.list-group-item.active
+{
+    opacity: 0.8;
+}
+.navbar-inverse
+{
+
+    font-weight: 400;
 }
 
 div.dataTables_filter {

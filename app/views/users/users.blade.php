@@ -6,7 +6,7 @@
 
         @include('users/userNav')
            <div class="col-xs-10 ">
-                    <table id="table" class="table table-striped table-hover ">
+                    <table id="table" class="table table-bordered table-striped table-responsive table-hover ">
                       <thead>
                         <tr>
                           <th>ID</th>

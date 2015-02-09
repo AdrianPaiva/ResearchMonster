@@ -53,8 +53,10 @@
                     <h3 class="panel-title text-center">Project Skills</h3>
                   </div>
                   <div class="panel-body"><br>
+                        <h6 class="text-center">Select the required skills for your project (Maximum 10)</h6>
+                        <br>
 
-                    <table id="skilltable" class="table table-striped table-hover ">
+                    <table id="skilltable" class="table table-bordered table-hover ">
                       <thead>
                         <tr>
                           <th></th>
@@ -88,6 +90,14 @@
                   </div>
                   <div class="panel-body"><br>
 
+                      {{ Form::open(array('url' => 'addSkill', 'class' => 'form-horizontal')) }}
+                          <h6 class="text-center">To add custom skills, add your skill below then select it from the list to add it your project.</h6>
+                          <br>
+                          {{ Form::text('skillName','', array('class' => "form-control float ",'placeholder' => "Skill Name")) }}
+
+                          <br>
+                          {{Form::submit("Add Skill",array("class" => "btn btn-success center-block"))}}
+                      {{ Form::close() }}
 
                   </div>
                 </div>
@@ -105,4 +115,6 @@
         $('#skilltable').DataTable();
     });
 </script>
+
+
 @stop
