@@ -35,7 +35,7 @@
 
             @if(Auth::check())
                 <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>
-                <li class="@if( $page == "projects") {{'active'}} @endif"><a href="{{URL::to('/projects')}}">Projects</a></li>
+                <li class="@if( $page == "projects" || $page == 'projects/addProject') {{'active'}} @endif"><a href="{{URL::to('/projects')}}">Projects</a></li>
                 <li class="@if( $page == "users") {{'active'}} @endif"><a href="{{URL::to('/users')}}">Users</a></li>
             @endif
 

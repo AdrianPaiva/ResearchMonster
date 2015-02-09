@@ -42,9 +42,9 @@ Route::get('dashboard/profile','ProfileController@showProfile');
 Route::get('dashboard/editProfile','ProfileController@showEditProfile');
 Route::post('dashboard/editProfile','ProfileController@doEditProfile');
 
-Route::get('dashboard/addProject', function()
+Route::get('projects/addProject', function()
 {
-    return View::make('dashboard.addProject')->with('title',"Add Project");
+    return View::make('projects.addProject')->with('title',"Add Project");
 });
 
 Route::get('projects/viewProject/{id}','ProjectController@viewProject');

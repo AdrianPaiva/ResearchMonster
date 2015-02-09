@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    @include('dashboard/navPartial')
+    @include('projects/projectNav')
 
     <div class="col-xs-10">
         <div class="panel panel-primary">
