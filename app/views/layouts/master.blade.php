@@ -29,10 +29,11 @@
 <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
 
 
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-static-top " role="navigation">
   <div class="container-fluid">
-    	<ul class="nav navbar-nav navbar-left ">
-            <a class="" href="/"><img class="img-circle col-xs-1 navbar-btn"  src="/images/gbc_small.png"></a>
+
+    	<ul class="nav navbar-nav  ">
+            <a class="brand" href="/"><img class="img-circle col-xs-1 navbar-btn"  src="/images/gbc_small.png"></a>
     	    <li><h3 class="mainTitle"><b class="text-success lead ">GBC</b> Research Monster</h3></li>
 
             @if(Auth::check())
@@ -42,7 +43,9 @@
             @endif
         </ul>
 
-         <ul class="nav navbar-nav navbar-right">
+
+
+         <ul class="nav navbar-nav navbar-right ">
               @if(Auth::check())
                    <li class=" @if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif"><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label btn-green  ">3</span> </a></li>
                    <li><a href="{{ URL::to('logout') }}">Logout</a></li>
