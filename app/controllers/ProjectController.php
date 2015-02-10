@@ -24,5 +24,10 @@ class ProjectController extends BaseController {
         $title = $id;
         return View::make('projects.viewProject')->with("title",$title);
     }
+    public function showEditProject($id)
+    {
+        $title = 'Edit Project';
+        return View::make('projects.editProject')->with("title", $title);
+    }
 
 }

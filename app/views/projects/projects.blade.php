@@ -41,7 +41,7 @@
                             </div>
 
                           </td>
-                          <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
+                          <td><a href="projects/viewProject/1" class="btn-sm btn-green pull-right"> View Project </a></td>
                         </tr>
                          <tr>
 
@@ -62,7 +62,7 @@
                              </div>
 
                            </td>
-                           <td><a href="projects/viewProject/1" class="btn-sm btn-success pull-right"> View Project </a></td>
+                           <td><a href="projects/viewProject/1" class="btn-sm btn-green pull-right"> View Project </a></td>
                          </tr>
 
 

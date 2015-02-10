@@ -26,7 +26,7 @@
                                {{ $errors->first('userPassword') }} <h6>{{$error or " "}} </h6>
                 <br>
                 <br>
-                {{Form::submit("LOGIN",array("class" => "btn btn-success col-xs-offset-5"))}}
+                {{Form::submit("LOGIN",array("class" => "btn btn-green col-xs-offset-5"))}}
                 {{ Form::close() }}
             </div>
             <h6>{{$err or " "}} </h6>

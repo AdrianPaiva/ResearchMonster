@@ -14,6 +14,12 @@
               <div class="panel-body">
 
             <img class="img-responsive col-xs-3" src="/images/homer.jpg">
+
+            <a class="btn btn-green pull-right" href="/requestUser">Request</a>
+            <br>
+            <br>
+            <a class="btn btn-yellow pull-right" href="/recommendUser">Recommend</a>
+            <br>
             <a class="" href="/"><img class="img col-xs-2 pull-right"  src="/images/linkedin-button.png"></a>
                     <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>
 
@@ -45,10 +51,10 @@
           <hr>
                  <h5><u>Skills</u></h5>
                  <br>
-                         <p class="btn btn-sm btn-success">PHP</p>
-                         <p class="btn btn-sm btn-success">MYSQL</p>
-                         <p class="btn btn-sm btn-success">PHP</p>
-                         <p class="btn btn-sm btn-success">MYSQL</p>
+                         <p class="btn btn-sm btn-green">PHP</p>
+                         <p class="btn btn-sm btn-green">MYSQL</p>
+                         <p class="btn btn-sm btn-green">PHP</p>
+                         <p class="btn btn-sm btn-green">MYSQL</p>
 
     <br>
     <hr>

@@ -34,7 +34,7 @@
 
                 <br>
                 <br>
-                {{Form::submit("Complete Registration",array("class" => "btn btn-success col-md-offset-4"))}}
+                {{Form::submit("Complete Registration",array("class" => "btn btn-green col-md-offset-4"))}}
                 {{ Form::close() }}
             </div>
 

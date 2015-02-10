@@ -33,7 +33,7 @@
                                     </ul>
                              </div>
                            </td>
-                          <td><a href="users/viewProfile/1" class="btn-sm btn-success pull-right"> View Profile </a></td>
+                          <td><a href="users/viewProfile/1" class="btn-sm btn-green pull-right"> View Profile </a></td>
                         </tr>
 
                       </tbody>

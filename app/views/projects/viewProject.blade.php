@@ -20,11 +20,11 @@
                 </div>
 
                 <div class="col-xs-6">
-                     <a href="#" class="btn-sm btn-success ">Apply</a>
-                     <a href="#" class="btn-sm btn-warning ">Edit</a>
-                     <a href="#" class="btn-sm btn-danger  ">Delete</a>
+                     <a href="#" class="btn-sm btn-green col-xs-offset-2 ">Apply</a>
+                     <a href="/projects/editProject/1" class="btn-sm btn-yellow">Edit</a>
+                     <a href="#" class="btn-sm btn-danger ">Delete</a>
 
-                     <a href="#" class="btn-sm btn-info ">Recommend Student</a>
+                     <a href="#" class="btn-sm btn-yellow ">Recommend Student</a>
                 </div>
 
             </div>
@@ -54,10 +54,10 @@
                           </p>
                 <hr>
               <strong><p><u>Skills</u></p></strong>
-                <p class="btn btn-sm btn-success">PHP</p>
-                <p class="btn btn-sm btn-success">MYSQL</p>
-                <p class="btn btn-sm btn-success">PHP</p>
-                <p class="btn btn-sm btn-success">MYSQL</p>
+                <p class="btn btn-sm btn-green">PHP</p>
+                <p class="btn btn-sm btn-green">MYSQL</p>
+                <p class="btn btn-sm btn-green">PHP</p>
+                <p class="btn btn-sm btn-green">MYSQL</p>
 
                 <br><br>
           </div>
@@ -108,7 +108,7 @@
 
                                                                           <td>
                                                                             <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
                                                                           </td>
                                                                         </tr>
                                                                         <tr>
@@ -117,7 +117,7 @@
                                                                           <td>Column content</td>
                                                                             <td>
                                                                                <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
                                                                             </td>
 
                                                                         </tr>
@@ -155,8 +155,8 @@
                                                                            <td>Column content</td>
 
                                                                           <td>
-
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-success pull-right "> View Profile </a>
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-yellow pull-right "> Request for this project </a>
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
                                                                           </td>
                                                                         </tr>
 
