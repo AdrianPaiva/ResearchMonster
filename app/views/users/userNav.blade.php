@@ -5,7 +5,6 @@
              <a href="users" class="list-group-item active">All Users </a>
              <a href="#" class="list-group-item">Sort Option </a>
              <a href="#" class="list-group-item">Sort Option </a>
-             <a href="#" class="list-group-item">Advanced Search </a>
            </div>
            <br>
 

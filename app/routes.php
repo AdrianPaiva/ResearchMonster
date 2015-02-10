@@ -47,6 +47,9 @@ Route::get('projects/addProject', function()
     return View::make('projects.addProject')->with('title',"Add Project");
 });
 
+Route::get('projects/skillSearch', function () {
+    return View::make('projects.skillSearch')->with('title', "Search Projects By Skill");
+});
 
 Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
 

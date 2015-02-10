@@ -31,14 +31,13 @@
                                 <br>
 
                                      <div class="form-group">
-                                       <label class="col-md-3 control-label" for="summary">Experience Required</label>
+                                       <label class="col-md-3 control-label" for="experience">Experience Required</label>
                                        <div class="col-md-9">
-                                         <textarea class="form-control" id="summary" name="summary" placeholder="Please enter the required experience for your project here:" rows="7"></textarea>
+                                         <textarea class="form-control" id="experience" name="experience" placeholder="Please enter the required experience for your project here:" rows="7"></textarea>
                                        </div>
                                      </div>
 
                             <br>
-
 
 
 
@@ -47,7 +46,7 @@
     </div>
 </div>
     <div class="row">
-            <div class="col-xs-5 col-xs-offset-2">
+            <div class="col-xs-6 col-xs-offset-2">
                 <div class="panel panel-primary">
                   <div class="panel-heading">
                     <h3 class="panel-title text-center">Project Skills</h3>
@@ -56,7 +55,7 @@
                         <h6 class="text-center">Select the required skills for your project (Maximum 10)</h6>
                         <br>
 
-                    <table id="skilltable" class="table table-bordered table-hover ">
+                    <table class="table table-bordered table-hover skilltable ">
                       <thead>
                         <tr>
                           <th></th>
@@ -66,24 +65,24 @@
                       <tbody>
                         <tr>
                           <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                          <td><p class="btn btn-sm btn-success">PHP</p></td>
+                          <td><p class="btn btn-sm btn-green">PHP</p></td>
                         </tr>
                         <tr>
                           <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                          <td><p class="btn btn-sm btn-success">MYSQL</p></td>
+                          <td><p class="btn btn-sm btn-green">MYSQL</p></td>
                         </tr>
                       </tbody>
                     </table>
 
                         <br><br><br>
-                          {{Form::submit("Add Project",array("class" => "btn btn-success center-block"))}}
+                          {{Form::submit("Add Project",array("class" => "btn btn-green center-block"))}}
                        {{ Form::close() }}
 
                   </div>
                 </div>
             </div>
 
-            <div class="col-xs-5">
+            <div class="col-xs-4">
                 <div class="panel panel-primary">
                   <div class="panel-heading">
                     <h3 class="panel-title text-center">Add Skills</h3>
@@ -96,7 +95,7 @@
                           {{ Form::text('skillName','', array('class' => "form-control float ",'placeholder' => "Skill Name")) }}
 
                           <br>
-                          {{Form::submit("Add Skill",array("class" => "btn btn-success center-block"))}}
+                          {{Form::submit("Add Skill",array("class" => "btn btn-green center-block"))}}
                       {{ Form::close() }}
 
                   </div>
@@ -112,9 +111,15 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('#skilltable').DataTable();
+        $('.skilltable').DataTable();
     });
 </script>
 
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'summary' );
+                CKEDITOR.replace( 'experience' );
+            </script>
 
 @stop

@@ -18,16 +18,22 @@
                 <br>
                 <div class="form-group ">
                     <div class="col-xs-10 col-xs-offset-1">
-                         {{ Form::text('userId', '', array('class' => "form-control",'placeholder' => "GBC User ID")) }}
+                         {{ Form::text('userId', '', array('class' => "form-control float",'placeholder' => "User ID")) }}
                             <br>
                             <br>
-                         {{ Form::email('email', '', array('class' => "form-control  ",'placeholder' => "GBC Email Address")) }}
+                         {{ Form::text('firstName', '', array('class' => "form-control float",'placeholder' => "First Name")) }}
                             <br>
                             <br>
-                         {{ Form::password('userPassword', array('class' => "form-control ",'placeholder' => "Password")) }}
+                         {{ Form::text('lastName', '', array('class' => "form-control float",'placeholder' => "Last Name")) }}
                             <br>
                             <br>
-                         {{ Form::password('userPasswordConfirm', array('class' => "form-control ",'placeholder' => "Confirm Password")) }}
+                         {{ Form::email('email', '', array('class' => "form-control float ",'placeholder' => "Email")) }}
+                            <br>
+                            <br>
+                         {{ Form::password('userPassword', array('class' => "form-control float",'placeholder' => "Password")) }}
+                            <br>
+                            <br>
+                         {{ Form::password('userPasswordConfirm', array('class' => "form-control float",'placeholder' => "Confirm Password")) }}
                     </div>
 
                 </div>
@@ -41,5 +47,8 @@
         </div>
     </div>
 
+<script>
+    $('.float').jvFloat();
+</script>
 
 @stop
