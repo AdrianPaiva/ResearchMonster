@@ -16,7 +16,6 @@ class CreateUserProfiles extends Migration {
         {
 
             $table->integer('userId')->unsigned();
-            $table->string('email')->nullable();
             $table->string('program')->nullable();
             $table->string('firstName')->nullable();
             $table->string('lastName')->nullable();

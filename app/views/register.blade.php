@@ -30,10 +30,10 @@
                          {{ Form::email('email', '', array('class' => "form-control float ",'placeholder' => "Email")) }}
                             <br>
                             <br>
-                         {{ Form::password('userPassword', array('class' => "form-control float",'placeholder' => "Password")) }}
+                         {{ Form::password('password', array('class' => "form-control float",'placeholder' => "Password")) }}
                             <br>
                             <br>
-                         {{ Form::password('userPasswordConfirm', array('class' => "form-control float",'placeholder' => "Confirm Password")) }}
+                         {{ Form::password('password_confirmation', array('class' => "form-control float",'placeholder' => "Confirm Password")) }}
                     </div>
 
                 </div>

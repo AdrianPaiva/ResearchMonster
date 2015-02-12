@@ -40,7 +40,7 @@
 
 
             </div>
-            <h6>{{$err or " "}} </h6>
+            <h6 class="text-center text-danger">{{$err or " "}} </h6>
 
 
         </div>

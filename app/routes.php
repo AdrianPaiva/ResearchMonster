@@ -61,6 +61,10 @@ Route::get('forgotPassword', function () {
 });
 Route::post('forgotPassword', 'RemindersController@postRemind');
 
+Route::get('register/verify/{confirmationCode}', [
+    'as' => 'confirmation_path',
+    'uses' => 'UserController@confirmUser'
+]);
 
 /* You can also do this to directly route to pages without a controller
 
