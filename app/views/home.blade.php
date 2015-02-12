@@ -23,15 +23,16 @@
         <br>
         <br>
 
+        @if(! Auth::check())
+
         <div class="col-xs-6 ">
             <div class="jumbotron text-center">
                 <p class="text-center">Already a member?</p>
                 <br>
                 <br>
                 <a href="login" class="btn-lg btn-green "> Login</a>
+
             </div>
-
-
         </div>
 
         <div class="col-xs-6 ">
@@ -41,9 +42,9 @@
                                   <br>
                   <a href="register" class="btn-lg btn-green "> Register</a>
                </div>
+        </div>
 
-
-         </div>
+        @endif
 </div>
 <br>
 <br>

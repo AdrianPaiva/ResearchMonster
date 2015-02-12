@@ -2,7 +2,7 @@
 
 class ProfileController extends BaseController
 {
-    public function showProfile()
+    public function showProfile() // This shows the current logged in users profile in the dashboard
     {
         $title = "My Profile";
         if(Auth::check())
@@ -15,6 +15,15 @@ class ProfileController extends BaseController
         }
 
     }
+
+    public function showUserProfile($id) // this shows user profiles on the users page
+    {
+        // toodo get which profile to here
+        $title = "Profile Name";
+
+        return View::make('users.viewProfile')->with("title", $title);
+    }
+
     public function showEditProfile()
     {
         $title = "Edit Profile";

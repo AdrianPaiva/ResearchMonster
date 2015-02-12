@@ -26,8 +26,19 @@
                                {{ $errors->first('userPassword') }} <h6>{{$error or " "}} </h6>
                 <br>
                 <br>
+
+                    {{Form::checkbox('remember','1')}}
+                    {{Form::label('remember', 'remember me')}}
+
+                    <a href="/forgotPassword" class="btn-sm btn-yellow pull-right">Forgot your password?</a>
+
+                <br><br><br><br><br>
                 {{Form::submit("LOGIN",array("class" => "btn btn-green col-xs-offset-5"))}}
+                <br>
+
                 {{ Form::close() }}
+
+
             </div>
             <h6>{{$err or " "}} </h6>
 

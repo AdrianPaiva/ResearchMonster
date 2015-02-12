@@ -18,7 +18,6 @@
             <a class="btn btn-green pull-right" href="/requestUser">Request</a>
             <br>
             <br>
-            <a class="btn btn-yellow pull-right" href="/recommendUser">Recommend</a>
             <br>
             <a class="" href="/"><img class="img col-xs-2 pull-right"  src="/images/linkedin-button.png"></a>
                     <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>

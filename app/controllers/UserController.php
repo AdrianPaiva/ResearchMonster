@@ -8,13 +8,7 @@ class UserController extends BaseController{
 
         return View::make('users.users')->with("title",$title);
     }
-    public function showUserProfile($id)
-    {
-        // toodo get which profile to here
-        $title = "Profile Name";
 
-        return View::make('users.viewProfile')->with("title",$title);
-    }
     public function registerUser()
     {
 
@@ -27,7 +21,7 @@ class UserController extends BaseController{
     public function doLogin()
     {
         $rules = array(
-            'userId'    => 'required|alphaNum|min:3',
+            'userId'    => 'required|alphaNum|min:6',
             'userPassword' => 'required'
         );
 
@@ -38,12 +32,15 @@ class UserController extends BaseController{
                 ->withErrors($validator) // send back all errors to the login form
                 ->withInput(Input::except('userPassword')); // send back the input (not the password) so that we can repopulate the form
         } else {
+
+            $remember = (Input::has('remember')) ? true : false;
+
             $userdata = array(
                 'userId' 	=> Input::get('userId'),
                 'password' 	=> Input::get('userPassword')
             );
 
-            if (Auth::attempt($userdata)) {
+            if (Auth::attempt($userdata, $remember)) {
 
                 return Redirect::to("/");
 

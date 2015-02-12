@@ -20,7 +20,7 @@ Route::get('/', 'HomeController@showWelcome');
 Route::get('projects', 'ProjectController@showAllProjects');
 
 Route::get('users', 'UserController@showAllUsers');
-Route::get('users/viewProfile/{id}', 'UserController@showUserProfile');
+Route::get('users/viewProfile/{id}', 'ProfileController@showUserProfile');
 
 Route::get('login', function() // this shows the login form
 {
@@ -55,6 +55,11 @@ Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
 
 Route::get('projects/editProject/{id}', 'ProjectController@showEditProject');
 Route::post('projects/editProject/{id}', 'ProjectController@editProject');
+
+Route::get('forgotPassword', function () {
+    return View::make('forgotPassword')->with('title', "Forgot password");
+});
+Route::post('forgotPassword', 'RemindersController@postRemind');
 
 
 /* You can also do this to directly route to pages without a controller
