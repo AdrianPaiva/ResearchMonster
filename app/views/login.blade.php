@@ -34,7 +34,8 @@
 
                 <br><br><br><br><br>
                 {{Form::submit("LOGIN",array("class" => "btn btn-green col-xs-offset-5"))}}
-                <br>
+                <br><br>
+
 
                 {{ Form::close() }}
 

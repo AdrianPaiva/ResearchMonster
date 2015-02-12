@@ -38,6 +38,20 @@
 
                 </div>
 
+                <br><br>
+
+                @if($errors->has())
+
+                    <ul>
+                        @foreach($errors->all() as $message)
+
+                            <li class="text-danger">{{ $message }}</li>
+
+                        @endforeach
+                </ul>
+
+                @endif
+
                 <br>
                 <br>
                 {{Form::submit("Complete Registration",array("class" => "btn btn-green col-md-offset-4"))}}
