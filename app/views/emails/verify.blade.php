@@ -8,8 +8,8 @@
 
         <div>
             Thanks for creating an account with Research Monster.
-            Please follow the link below to verify your email address
-            {{ URL::to('register/verify/' . $confirmation_code) }}.<br/>
+            Please follow the link below to verify your email address<br>
+            {{ URL::to('register/verify/' . $confirmation_code) }}<br/>
 
         </div>
 

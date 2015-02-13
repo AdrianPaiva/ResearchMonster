@@ -50,7 +50,7 @@
 <br>
 
 @if(Session::has('message'))
-<p class="alert alert-success">{{ Session::get('message') }}</p>
+<h4 class="alert alert-success">{{ Session::get('message') }}</h4>
 @endif
 
 @include('layouts/hr')

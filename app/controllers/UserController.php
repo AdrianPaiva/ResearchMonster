@@ -34,6 +34,12 @@ class UserController extends BaseController{
             return Redirect::back()->withInput()->withErrors($validator);
         }
 
+        if(!ends_with(Input::get('email'),'@georgebrown.ca'))
+        {
+            Session::flash('emailError', 'A georgebrown.ca email address is required');
+            return Redirect::back()->withInput();
+        }
+
         $confirmation_code = str_random(30);
 
         User::create([

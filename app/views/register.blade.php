@@ -51,6 +51,10 @@
                 </ul>
 
                 @endif
+                @if(Session::has('emailError'))
+                <p class="text-center">{{ Session::get('emailError') }}</p>
+                @endif
+
 
                 <br>
                 <br>
