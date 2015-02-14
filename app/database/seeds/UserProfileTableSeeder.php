@@ -10,7 +10,6 @@ class UserProfileTableSeeder extends Seeder
         UserProfile::create(array(
 
             'userId'    => 123456789,
-            'email' => 'email@email.com',
             'program' => 'test program name',
             'firstName' => 'test first name',
             'lastName' => 'test last name'

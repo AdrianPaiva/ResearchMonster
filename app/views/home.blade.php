@@ -11,7 +11,13 @@
     <h4 class="jumbotronHeader">George Brown College</h4>
     <h4 class="jumbotronHeader">Office of Research and Innovation </h4>
 
-
+    @if(Auth::user()->isUser())
+        I am a user
+    @elseif(Auth::user()->isAdmin())
+        I am an admin
+    @elseif(Auth::user()->isResearcher())
+        I am a researcher
+    @endif
 
 </div>
 

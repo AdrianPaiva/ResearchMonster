@@ -9,8 +9,8 @@
         <div>
             Thanks for creating an account with Research Monster.
             Please follow the link below to verify your email address<br>
-            {{ URL::to('register/verify/' . $confirmation_code) }}<br/>
-
+            <br/>
+            <a href="{{ URL::to('register/verify/' . $confirmation_code) }}" >Verify Me!</a>
         </div>
 
     </body>
