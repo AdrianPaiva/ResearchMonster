@@ -66,6 +66,15 @@ Route::get('register/verify/{confirmationCode}', [
     'uses' => 'UserController@confirmUser'
 ]);
 
+
+
+Route::get('admin', 'AdminController@showAllUsers');
+Route::get('admin/admins', 'AdminController@showAdmins');
+Route::get('admin/researchers', 'AdminController@showResearchers');
+Route::get('admin/standardUsers', 'AdminController@showStandardUsers');
+
+
+
 /* You can also do this to directly route to pages without a controller
 
  * Route::get('/', function()

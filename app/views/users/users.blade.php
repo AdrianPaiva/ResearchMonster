@@ -6,7 +6,7 @@
 
         @include('users/userNav')
            <div class="col-xs-10 ">
-                    <table id="table" class="table table-bordered table-striped table-responsive table-hover ">
+                    <table class="table table-bordered table-striped table-responsive table-hover ">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -46,7 +46,7 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('#table').DataTable();
+        $('.table').DataTable();
     });
 </script>
 

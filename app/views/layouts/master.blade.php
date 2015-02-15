@@ -39,7 +39,14 @@
             @if(Auth::check())
                 <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>
                 <li class="@if( $page == "projects" || $page == 'projects/addProject') {{'active'}} @endif"><a href="{{URL::to('/projects')}}">Projects</a></li>
-                <li class="@if( $page == "users") {{'active'}} @endif"><a href="{{URL::to('/users')}}">Users</a></li>
+
+                @if(Auth::user()->isResearcher() || Auth::user()->isAdmin())
+                    <li class="@if( $page == "users") {{'active'}} @endif"><a href="{{URL::to('/users')}}">Users</a></li>
+                @endif
+
+                 @if(Auth::user()->isAdmin())
+                     <li class="@if( $page == "admin" || $page == 'admin/researchers' || $page == 'admin/standardUsers') {{'active'}} @endif"><a href="{{URL::to('/admin')}}">Admin</a></li>
+                 @endif
             @endif
         </ul>
 
