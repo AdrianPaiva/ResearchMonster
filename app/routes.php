@@ -72,6 +72,7 @@ Route::get('admin', 'AdminController@showAllUsers');
 Route::get('admin/admins', 'AdminController@showAdmins');
 Route::get('admin/researchers', 'AdminController@showResearchers');
 Route::get('admin/standardUsers', 'AdminController@showStandardUsers');
+Route::post('admin/editRole', 'AdminController@editRole'); // processes edit role
 
 
 

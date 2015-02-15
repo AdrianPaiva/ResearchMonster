@@ -12,7 +12,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     protected $table = "users";
     protected $primaryKey = 'userId';
     protected $fillable = array('userId', 'password','email','confirmed','confirmation_code');
-    protected $hidden = array('password', 'remember_token','role');
+    protected $hidden = array('password', 'remember_token', 'role');
 
     public function profile()
     {
@@ -32,5 +32,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     {
         return $this->attributes['role'] == 'researcher';
     }
+
 
 }
