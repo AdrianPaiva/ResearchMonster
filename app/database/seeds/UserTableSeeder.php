@@ -11,7 +11,8 @@ class UserTableSeeder extends Seeder
             'userId'    => 123456789,
             'password' => Hash::make('awesome'),
             'email' => 'adrianpaiva1@gmail.com',
-            'confirmed' => 1
+            'confirmed' => 1,
+            'role' => 'admin'
 
 
         ));

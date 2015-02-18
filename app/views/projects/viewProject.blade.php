@@ -23,6 +23,7 @@
                      <a href="#" class="btn-sm btn-green col-xs-offset-2 ">Apply</a>
                      <a href="/projects/editProject/1" class="btn-sm btn-yellow">Edit</a>
                      <a href="#" class="btn-sm btn-danger ">Delete</a>
+                     <a href="#" class="btn-sm btn-yellow ">Recommend</a>
                 </div>
 
             </div>

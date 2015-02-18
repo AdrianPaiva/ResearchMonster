@@ -15,6 +15,7 @@
 
             <img class="img-responsive col-xs-3" src="/images/homer.jpg">
 
+            <a class="btn btn-yellow pull-right" href="#">Recommend</a>
             <a class="btn btn-green pull-right" href="/requestUser">Request</a>
             <br>
             <br>
