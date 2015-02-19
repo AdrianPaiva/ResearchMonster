@@ -20,7 +20,7 @@
             <br>
             <br>
             <br>
-            <a class="" href="/"><img class="img col-xs-2 pull-right"  src="/images/linkedin-button.png"></a>
+
                     <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>
 
                     <h5 class="lead">{{{$profile->program or "T127 Computer Programmer Analyst"}}}</h5>

@@ -131,7 +131,7 @@
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title text-center">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Recommended Users
+                      Pending Applications
                     </a>
                   </h4>
                 </div>
@@ -145,6 +145,7 @@
                                                                           <th>Name</th>
                                                                           <th>Email</th>
                                                                           <th></th>
+                                                                          <th></th>
                                                                         </tr>
                                                                       </thead>
                                                                       <tbody>
@@ -154,9 +155,15 @@
                                                                            <td>Column content</td>
 
                                                                           <td>
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-yellow pull-right "> Request for this project </a>
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
+                                                                          <div class="text-center">
+                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green"> View Profile </a>
+                                                                          </div>
+
                                                                           </td>
+                                                                           <td>
+                                                                               <a href="#" class="btn btn-sm btn-green "> Accept </a>
+                                                                                 <a href="#" class="btn btn-sm btn-danger pull-right "> Deny </a>
+                                                                            </td>
                                                                         </tr>
 
 
