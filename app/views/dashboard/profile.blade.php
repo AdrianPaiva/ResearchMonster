@@ -43,10 +43,7 @@
           <hr>
                  <h5><u>Skills</u></h5>
                  <br>
-                         <p class="btn btn-sm btn-green">PHP</p>
-                         <p class="btn btn-sm btn-green">MYSQL</p>
-                         <p class="btn btn-sm btn-green">PHP</p>
-                         <p class="btn btn-sm btn-green">MYSQL</p>
+                         <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p>
 
     <br>
     <hr>

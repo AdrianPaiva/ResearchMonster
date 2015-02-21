@@ -16,7 +16,6 @@
             <img class="img-responsive col-xs-3" src="/images/homer.jpg">
 
             <a class="btn btn-yellow pull-right" href="#">Recommend</a>
-            <a class="btn btn-green pull-right" href="/requestUser">Request</a>
             <br>
             <br>
             <br>
@@ -51,10 +50,7 @@
           <hr>
                  <h5><u>Skills</u></h5>
                  <br>
-                         <p class="btn btn-sm btn-green">PHP</p>
-                         <p class="btn btn-sm btn-green">MYSQL</p>
-                         <p class="btn btn-sm btn-green">PHP</p>
-                         <p class="btn btn-sm btn-green">MYSQL</p>
+                         <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p>
 
     <br>
     <hr>

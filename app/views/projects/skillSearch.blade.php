@@ -19,11 +19,11 @@
                               <tbody>
                                 <tr>
                                   <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                                  <td><p class="btn btn-sm btn-green">PHP</p></td>
+                                  <td><p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p></td>
                                 </tr>
                                 <tr>
                                   <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                                  <td><p class="btn btn-sm btn-green">MYSQL</p></td>
+                                  <td><p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p></td>
                                 </tr>
                               </tbody>
                             </table>
