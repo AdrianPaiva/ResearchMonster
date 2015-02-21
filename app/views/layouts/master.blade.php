@@ -10,6 +10,7 @@
 	{{ HTML::style('//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css'); }}
 	{{ HTML::style('css/jvfloat.css'); }}
     {{ HTML::style('css/main.css'); }}
+    {{ HTML::style('css/tagsinput.css'); }}
 
 
 
@@ -27,6 +28,7 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 <script type="text/javascript" charset="utf8" src="js/jvfloat.min.js"></script>
 <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+
 
 
   <nav class="navbar navbar-inverse navbar-static-top " role="navigation">

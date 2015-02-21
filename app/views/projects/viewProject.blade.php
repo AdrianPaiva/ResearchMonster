@@ -89,7 +89,7 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
 
-                                                <table id="userTable" class="table table-bordered table-striped table-responsive table-hover ">
+                                                <table class="table table-bordered table-striped table-responsive table-hover ">
                                                                       <thead>
                                                                         <tr>
                                                                           <th>ID</th>
@@ -138,7 +138,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
 
-                                                <table id="recommendedTable" class="table table-bordered table-striped table-responsive table-hover ">
+                                                <table class="table table-bordered table-striped table-responsive table-hover ">
                                                                       <thead>
                                                                         <tr>
                                                                           <th>ID</th>
@@ -184,12 +184,8 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('#userTable').DataTable();
+        $('.table').DataTable();
     });
 </script>
-<script type="text/javascript" >
-    $(document).ready(function () {
-        $('#recommendedTable').DataTable();
-    });
-</script>
+
 @stop

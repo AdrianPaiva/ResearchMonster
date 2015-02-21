@@ -2,6 +2,12 @@
 
 @section('content')
 
+    <script>
+        $.getScript('http://timschlechter.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',function(){
+
+        });
+    </script>
+
 <div class="row">
     @include('dashboard/navPartial')
 
@@ -32,6 +38,24 @@
                         <h5>Experience</h5>
                        {{ Form::textarea('experience','Experience: Here you can list some of your previous experience.',array('class'=>'col-xs-12', 'id' => 'editor2')) }}
 
+                        <hr>
+                        <h5>Skills</h5>
+                        <br><br>
+                       <div class="form-group">
+
+                                       <div class="input-group-lg col-xs-10">
+                                           <select multiple="multiple" data-role="tagsinput">
+                                            <div class="btn btn-yellow"></div>
+                                             <option value="Amsterdam">Amsterdam</option>
+                                             <option value="Washington">Washington</option>
+                                             <option value="Sydney">Sydney</option>
+                                             <option value="Beijing">Beijing</option>
+                                             <option value="Cairo">Cairo</option>
+                                           </select>
+                                           <span class="btn btn-sm btn-default">Add Skill</span>
+                                       </div>
+                        </div>
+
                        <div class="col-xs-12">
                               <br>
                               <br>
@@ -43,74 +67,20 @@
                            <a href="#" class="btn btn-danger">Delete</a>
 
                        </div>
+
+
                     <br>
                     <br>
 
+                    {{Form::submit('Edit Profile', array('class' => 'btn btn-yellow center-block'))}}
+                {{Form::close()}}
 
           </div>
         </div>
     </div>
 </div>
 
-    <div class="row">
-            <div class="col-xs-6 col-xs-offset-2">
-                <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    <h3 class="panel-title text-center">Project Skills</h3>
-                  </div>
-                  <div class="panel-body"><br>
-                        <h6 class="text-center">Select skills for your profile (Maximum 10)</h6>
-                        <br>
 
-                    <table class="table table-bordered table-hover skilltable ">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Skill</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                          <td><p class="btn btn-sm btn-green">PHP</p></td>
-                        </tr>
-                        <tr>
-                          <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                          <td><p class="btn btn-sm btn-green">MYSQL</p></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                        <br><br><br>
-
-                    {{Form::submit('Edit Profile', array('class' => 'btn btn-yellow center-block'))}}
-                {{Form::close()}}
-
-                  </div>
-                </div>
-            </div>
-
-            <div class="col-xs-4">
-                <div class="panel panel-primary">
-                  <div class="panel-heading">
-                    <h3 class="panel-title text-center">Add Skills</h3>
-                  </div>
-                  <div class="panel-body"><br>
-
-                      {{ Form::open(array('url' => 'addSkill', 'class' => 'form-horizontal')) }}
-                          <h6 class="text-center">To add custom skills, add your skill below then select it from the list to add it your profile.</h6>
-                          <br>
-                          {{ Form::text('skillName','', array('class' => "form-control float ",'placeholder' => "Skill Name")) }}
-
-                          <br>
-                          {{Form::submit("Add Skill",array("class" => "btn btn-green center-block"))}}
-                      {{ Form::close() }}
-
-                  </div>
-                </div>
-            </div>
-
-    </div>
 
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
