@@ -51,6 +51,7 @@
 	-webkit-transition: -webkit-transform 100ms, opacity 120ms, visibility 120ms;
 	transition: transform 100ms, opacity 120ms, visibility 120ms;
 	opacity: 1;
+    margin-top: -2em;
 }
 /* End CSS3 */
 

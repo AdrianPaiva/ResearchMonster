@@ -32,8 +32,7 @@ App::after(function($request, $response)
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
-Route::when('users', 'isResearcher','isAdmin');
-Route::when('users/*', 'isResearcher','isAdmin'); // this makes all users pages only available to researchers or admins.
+
 
 Route::filter('auth', function()
 {
@@ -62,6 +61,30 @@ Route::filter('isResearcher', function () {
     }
 });
 
+Route::filter('isProfessor', function () {
+
+    if (!Auth::user()->isProfessor()) {
+
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('/');
+        }
+    }
+});
+
+Route::filter('isStudent', function () {
+
+    if (!Auth::user()->isStudent()) {
+
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('/');
+        }
+    }
+});
+
 Route::filter('isAdmin', function () {
 
     if (!Auth::user()->isAdmin()) {
@@ -74,6 +97,17 @@ Route::filter('isAdmin', function () {
     }
 });
 
+Route::filter('canViewUsers', function () {
+
+    if (!Auth::user()->canViewUsers()) {
+
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('/');
+        }
+    }
+});
 
 
 Route::filter('auth.basic', function()

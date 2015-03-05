@@ -24,14 +24,44 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->attributes['role'] == 'admin';
     }
 
-    public function isUser()
+    public function isStudent()
     {
-        return $this->attributes['role'] == 'user';
+        return $this->attributes['role'] == 'student';
     }
+
     public function isResearcher()
     {
         return $this->attributes['role'] == 'researcher';
     }
 
+    public function isProfessor()
+    {
+        return $this->attributes['role'] == 'professor';
+    }
 
+    public function canViewUsers()
+    {
+        if($this->attributes['role'] == 'admin' || $this->attributes['role'] == 'researcher' || $this->attributes['role'] == 'professor')
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function canCreateProjects()
+    {
+        if ($this->attributes['role'] == 'admin' || $this->attributes['role'] == 'researcher') {
+            return true;
+        }
+        return false;
+    }
+
+    public function canJoinProjects()
+    {
+        if ($this->attributes['role'] == 'student' || $this->attributes['role'] == 'admin') {
+            return true;
+        }
+        return false;
+    }
 }

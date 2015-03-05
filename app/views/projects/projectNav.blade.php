@@ -1,4 +1,4 @@
-<div class='col-xs-4 col-sm-3 col-md-2'>
+<div class='col-xs-2 col-sm-2 col-md-2'>
 
     <?php
             $page = Route::current()->getUri();
@@ -12,10 +12,22 @@
              <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Skill Search</a>
            <br>
               <p href="#" class="list-group-item btn btn-green">My Projects </p>
-              <a href="#" class="list-group-item">All My Projects </a>
-              <a href="#" class="list-group-item">Recommended Projects </a>
-              <a href="/projects/addProject"  class="list-group-item @if( $page == "projects/addProject") {{'active'}} @endif">Add Project </a>
 
+              @if(Auth::user()->canCreateProjects())
+                <a href="#" class="list-group-item">Created Projects </a>
+              @endif
+
+              @if(Auth::user()->canJoinProjects())
+                <a href="#" class="list-group-item">Joined Projects </a>
+              @endif
+
+              @if(Auth::user()->isStudent() || Auth::user()->isAdmin())
+                <a href="#" class="list-group-item">Recommended Projects </a>
+              @endif
+
+              @if(Auth::user()->canCreateProjects())
+                <a href="/projects/addProject"  class="list-group-item @if( $page == "projects/addProject") {{'active'}} @endif">Add Project </a>
+              @endif
           </div>
 
 </div>

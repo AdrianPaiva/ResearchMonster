@@ -12,7 +12,7 @@
     <h4 class="jumbotronHeader">Office of Research and Innovation </h4>
 
   @if(Auth::check())
-    @if(Auth::user()->isUser())
+    @if(Auth::user()->isStudent())
         I am a user
     @elseif(Auth::user()->isAdmin())
         I am an admin

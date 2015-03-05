@@ -11,16 +11,19 @@
                         <tr>
                           <th>ID</th>
                           <th>Name</th>
-                          <th>Email</th>
+                          <th>Program</th>
                           <th>Skills</th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
+
+                      @foreach($users as $user)
+
                         <tr>
-                          <td>100888999</td>
-                          <td>Column content</td>
-                          <td>Column content</td>
+                          <td>{{$user->userId}}</td>
+                          <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
+                          <td>{{$user->program or "No Program Selected"}}</td>
                           <td>
                              <div class="btn-group">
                                 <a href="#" class="btn btn-default">MYSQL</a>
@@ -33,8 +36,10 @@
                                     </ul>
                              </div>
                            </td>
-                          <td><a href="users/viewProfile/1" class="btn-sm btn-green pull-right"> View Profile </a></td>
+                          <td><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a></td>
                         </tr>
+
+                        @endforeach
 
                       </tbody>
                     </table>

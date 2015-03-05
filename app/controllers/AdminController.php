@@ -23,9 +23,16 @@ class AdminController extends BaseController
         return View::make('admin.admin')->with('title', "Admin")->with('users', $users);
     }
 
-    public function showStandardUsers()
+    public function showProfessors()
     {
-        $users = User::where('role', '=', 'user')->get();
+        $users = User::where('role', '=', 'professor')->get();
+
+        return View::make('admin.admin')->with('title', "Admin")->with('users', $users);
+    }
+
+    public function showStudents()
+    {
+        $users = User::where('role', '=', 'student')->get();
 
         return View::make('admin.admin')->with('title', "Admin")->with('users', $users);
     }
@@ -42,7 +49,7 @@ class AdminController extends BaseController
             $user->role = $newRole;
             $user->save();
 
-            Session::flash('message', 'Role changed successfuly!');
+            Session::flash('message', 'Role changed successfully!');
 
         }
 

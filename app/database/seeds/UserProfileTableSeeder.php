@@ -15,6 +15,14 @@ class UserProfileTableSeeder extends Seeder
             'lastName' => 'test last name'
 
         ));
+        UserProfile::create(array(
+
+            'userId' => 12345678,
+            'program' => 'program',
+            'firstName' => 'Adrian',
+            'lastName' => 'is cool'
+
+        ));
 
 
 

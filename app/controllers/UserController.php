@@ -2,11 +2,13 @@
 
 class UserController extends BaseController{
 
-    public function showAllUsers()
+    public function showAllStudents()
     {
         $title = "Users";
 
-        return View::make('users.users')->with("title",$title);
+        $users = User::where('role', '=', 'student')->get();
+
+        return View::make('users.users')->with("title",$title)->with("users",$users);
     }
 
     public function registerUser()

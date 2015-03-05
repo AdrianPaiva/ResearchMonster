@@ -32,16 +32,17 @@
                                             {{ Form::hidden('userId', $user->userId) }}
 
                                             <select name="role" class="form-control">
-                                                <option value="user" @if($user->role == "user") {{'selected = selected'}} @endif> Standard User</option>
+                                                <option value="student" @if($user->role == "student") {{'selected = selected'}} @endif> Student</option>
                                                 <option value="researcher" @if($user->role == "researcher") {{'selected = selected'}} @endif> Research Department Staff</option>
                                                 <option value="admin" @if($user->role == "admin") {{'selected = selected'}} @endif > Admin </option>
+                                                <option value="professor" @if($user->role == "professor") {{'selected = selected'}} @endif > Professor </option>
                                             </select>
 
                                             {{Form::submit('Edit Role!', array('class' => 'btn btn-sm btn-yellow pull-right'))}}
 
                                         {{Form::close()}}
                                   </td>
-                                  <td><a href="{{URL::to('users/viewProfile/1')}}" class="btn-sm btn-green pull-right"> View Profile </a></td>
+                                  <td><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a></td>
 
                                 </tr>
 

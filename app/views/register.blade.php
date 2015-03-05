@@ -18,7 +18,8 @@
                 <br>
                 <div class="form-group ">
                     <div class="col-xs-10 col-xs-offset-1">
-                         {{ Form::text('userId', '', array('class' => "form-control float",'placeholder' => "User ID")) }}
+
+                         {{ Form::text('userId', '', array('class' => "form-control float",'placeholder' => "UserID")) }}
                             <br>
                             <br>
                          {{ Form::text('firstName', '', array('class' => "form-control float",'placeholder' => "First Name")) }}
@@ -67,6 +68,7 @@
 
 <script>
     $('.float').jvFloat();
+
 </script>
 
 @stop

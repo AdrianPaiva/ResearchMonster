@@ -8,7 +8,7 @@
 
         @include('projects/projectNav')
 
-                <div class="col-md-10 ">
+                <div class="col-xs-10 ">
                     <table id="table" class="table table-bordered table-striped table-responsive table-hover ">
                       <thead>
                         <tr>
