@@ -20,10 +20,16 @@
                 </div>
 
                 <div class="col-xs-6">
-                     <a href="#" class="btn-sm btn-green col-xs-offset-2 ">Apply</a>
-                     <a href="/projects/editProject/1" class="btn-sm btn-yellow">Edit</a>
-                     <a href="#" class="btn-sm btn-danger ">Delete</a>
-                     <a href="#" class="btn-sm btn-yellow ">Recommend</a>
+                    @if(Auth::user()->isStudent())
+                     <a href="#" class="btn btn-green col-xs-offset-2 ">Apply</a>
+                    @endif
+                    @if(Auth::user()->isResearcher())
+                     <a href="/projects/editProject/1" class="btn btn-yellow">Edit</a>
+                     <a href="#" class="btn btn-danger ">Delete</a>
+                    @endif
+                    @if(Auth::user()->isProfessor())
+                     <a href="#" class="btn btn-yellow ">Recommend</a>
+                    @endif
                 </div>
 
             </div>
@@ -52,10 +58,11 @@
                              integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
                           </p>
                 <hr>
-              <strong><p><u>Skills</u></p></strong>
+              <strong><p><u>Skills Required</u></p></strong>
                 <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p>
 
-                <br><br>
+                <br><br><hr>
+              <strong><p><u>Attachments</u></p></strong>
           </div>
         </div>
 
@@ -68,6 +75,8 @@
 </div>
 
 <hr>
+
+@if(Auth::user()->isResearcher())
 
 <div class="row">
 
@@ -176,7 +185,7 @@
             </div>
 
 </div>
-
+@endif
 
 
 <script type="text/javascript" >
