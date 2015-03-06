@@ -5,14 +5,6 @@
 <div class="row">
     @include('projects/projectNav')
 
-    <!-- This is for the tags input --->
-    <script>
-        $.getScript('http://timschlechter.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',function(){
-
-        });
-    </script>
-
-
     <div class="col-xs-10">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -46,22 +38,34 @@
                                      </div>
 
                             <br>
-                                     <div class="form-group">
-                                       <label class="col-xs-2 control-label" for="experience">Skills Required</label>
-                                       <div class="input-group-lg col-xs-10">
-                                           <select multiple="multiple" data-role="tagsinput">
-                                            <div class="btn btn-yellow"></div>
-                                             <option value="Amsterdam">Amsterdam</option>
-                                             <option value="Washington">Washington</option>
-                                             <option value="Sydney">Sydney</option>
-                                             <option value="Beijing">Beijing</option>
-                                             <option value="Cairo">Cairo</option>
-                                           </select>
-                                           <span class="btn btn-sm btn-default">Add Skill</span>
-                                       </div>
-                                     </div>
+
+                        <div class="form-group">
+                              <label class="col-xs-2 control-label" for="skills">Skills Required</label>
+                              <div class="input-group-lg col-xs-10" id="skills">
+                                    <input type="text" name="tags"  placeholder="Enter your skill and press enter" class="tm-input form-control"/>
+
+                              </div>
+                         </div><br><br>
 
 
+                            <div class="form-group">
+                                <label class="col-xs-2 control-label">Attachment</label>
+                               <span class="btn btn-file input-group" > Upload File
+                                       {{Form::file('file')}}
+                                </span>
+                            </div>
+
+
+
+                    @if($errors->has())
+                                        <ul>
+                                            @foreach($errors->all() as $message)
+
+                                                <li class="text-danger">{{ $message }}</li>
+
+                                            @endforeach
+                                    </ul>
+                    @endif
 
 
                         {{Form::submit("Add Project",array("class" => "btn btn-green center-block"))}}
@@ -73,22 +77,20 @@
 </div>
 
 
-<script>
-    $('.float').jvFloat();
+<script type="text/javascript">
+
+  CKEDITOR.replace( 'summary' );
+  CKEDITOR.replace( 'experience' );
 
 </script>
 
-<script type="text/javascript" >
-    $(document).ready(function () {
-        $('.skilltable').DataTable();
-    });
+<script type="text/javascript">
+     jQuery(".tm-input").tagsManager(
+          {
+              maxTags: 20
+          }
+           );
 </script>
 
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'summary' );
-                CKEDITOR.replace( 'experience' );
-            </script>
 
 @stop

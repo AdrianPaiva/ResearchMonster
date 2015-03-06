@@ -8,7 +8,7 @@
 
             <div class="jumbotron">
                 <div class="row ">
-                    <img class="img-responsive img-circle col-xs-6 col-xs-offset-3"  src="/images/gbc_small.png">
+                    <img class="img-responsive img-rounded col-xs-6 col-xs-offset-3"  src="/images/gbc_small.png">
                 </div>
 
                 <br>
@@ -33,7 +33,10 @@
                     <a href="/forgotPassword" class="btn-sm btn-yellow pull-right">Forgot your password?</a>
 
                 <br><br><br><br><br>
-                {{Form::submit("LOGIN",array("class" => "btn btn-green col-xs-offset-5"))}}
+                <div class="text-center">
+                    {{Form::submit("LOGIN",array("class" => "btn-lg btn-green "))}}
+                </div>
+
                 <br><br>
 
 

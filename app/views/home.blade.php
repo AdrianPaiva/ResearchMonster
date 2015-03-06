@@ -52,6 +52,26 @@
         </div>
 
         @endif
+
+        @if(Auth::check())
+            <div class="col-xs-3">
+                <div class="panel panel-default">
+                  <div class="panel-heading btn center-block">
+                    <h3 class="panel-title text-center">Project Name</h3>
+                  </div>
+                  <div class="panel-body">
+                    <h6>Posted By:</h6>
+                    <h6>Date Posted:</h6>
+                    <hr>
+                    Description
+                        <div class="text-center">
+                            <a href="projects/viewProject/1" class="btn-sm btn-green"> View Project </a>
+                        </div>
+                  </div>
+                </div>
+            </div>
+
+        @endif
 </div>
 <br>
 <br>

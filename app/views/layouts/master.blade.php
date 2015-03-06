@@ -35,7 +35,7 @@
   <div class="container-fluid">
 
     	<ul class="nav navbar-nav  ">
-            <a class="brand" href="/"><img class="img-circle col-xs-1 navbar-btn"  src="/images/gbc_small.png"></a>
+            <a class="brand" href="/"><img class="img-rounded col-xs-1 navbar-btn"  src="/images/gbc_small.png"></a>
     	    <li><h3 class="mainTitle"><b class="text-success lead ">GBC</b> Research Monster</h3></li>
 
             @if(Auth::check())

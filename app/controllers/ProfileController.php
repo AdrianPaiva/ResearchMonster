@@ -25,12 +25,12 @@ class ProfileController extends BaseController
         $user = User::findOrFail($id);
         $profile = $user->profile;
         $skills = unserialize($profile->skills);
-
+        $email = $user->email;
         if($user->role != "student")
         {
             return Redirect::to('/');
         }
-        return View::make('users.viewProfile')->with("title", $title)->with('profile',$profile)->with('skills', $skills);
+        return View::make('users.viewProfile')->with("title", $title)->with('profile',$profile)->with('skills', $skills)->with('email',$email);
     }
 
     public function showEditProfile()

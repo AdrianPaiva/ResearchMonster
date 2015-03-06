@@ -9,7 +9,7 @@
 
             <div class="form-horizontal">
                                 <div class="row ">
-                                    <img class="img-responsive img-circle col-xs-6 col-xs-offset-3"  src="/images/gbc_small.png">
+                                    <img class="img-responsive img-rounded col-xs-6 col-xs-offset-3"  src="/images/gbc_small.png">
                                 </div>
             <br>
             {{ Form::open(array('url' => 'register')) }}
@@ -59,7 +59,10 @@
 
                 <br>
                 <br>
-                {{Form::submit("Complete Registration",array("class" => "btn btn-green col-md-offset-4"))}}
+                <div class="text-center">
+                    {{Form::submit("Complete Registration",array("class" => "btn btn-lg btn-green "))}}
+                </div>
+
                 {{ Form::close() }}
             </div>
 

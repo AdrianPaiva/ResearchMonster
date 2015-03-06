@@ -8,7 +8,7 @@
 
 <div class="col-xs-10">
             <div class="panel panel-primary">
-              <div class="panel-heading">
+              <div class="panel-heading ">
                 <h3 class="panel-title text-center">{{{$profile->firstName or "First "}}} {{{$profile->lastName or "Last "}}}</h3>
               </div>
 

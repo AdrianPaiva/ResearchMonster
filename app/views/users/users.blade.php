@@ -26,12 +26,13 @@
                           <td>{{$user->profile->program or "No Program Selected"}}</td>
                           <td>
                              <div class="btn-group">
-                                <a href="#" class="btn btn-default">Skills</a>
+                                <a href="#" class="btn btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
                                 <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                    <ul class="dropdown-menu">
 
                                         @foreach(unserialize($user->profile->skills) as $skill)
-                                           <li>{{$skill}}</li>
+
+                                           <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill}}</p>
                                         @endforeach
                                     </ul>
                              </div>
