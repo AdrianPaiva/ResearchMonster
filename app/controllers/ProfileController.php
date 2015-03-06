@@ -19,12 +19,17 @@ class ProfileController extends BaseController
 
     public function showUserProfile($id) // this shows user profiles on the users page
     {
-        // toodo get which profile to here
+
         $title = "Profile Name";
 
         $user = User::findOrFail($id);
         $profile = $user->profile;
         $skills = unserialize($profile->skills);
+
+        if($user->role != "student")
+        {
+            return Redirect::to('/');
+        }
         return View::make('users.viewProfile')->with("title", $title)->with('profile',$profile)->with('skills', $skills);
     }
 
@@ -72,6 +77,16 @@ class ProfileController extends BaseController
             Input::file('image')->move($destinationPath, $filename);
 
             $user->profile->picture = '/img/'.$filename ;
+        }
+
+        if (Input::hasFile('file')) {
+            $file = Input::file('file');
+            $destinationPath = public_path() . '/uploads/';
+            $filename = $file->getClientOriginalName();
+            Input::file('file')->move($destinationPath, $filename);
+
+            $user->profile->attachment1 = '/uploads/' . $filename;
+            $user->profile->attachment2 = $filename;
         }
 
         $user->save();

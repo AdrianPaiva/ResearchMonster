@@ -57,8 +57,10 @@
 
                 <h5><u>Attachments</u></h5>
                 <br>
-                    <p class="btn btn-sm btn-yellow">Resume</p>
-                    <p class="btn btn-sm btn-yellow">Portfolio</p>
+                    @if($profile->attachment1 != null)
+                        <p class="btn btn-yellow">{{ link_to($profile->attachment1, $profile->attachment2) }}</p>
+
+                    @endif
 
 
              </div>

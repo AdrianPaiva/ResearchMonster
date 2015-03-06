@@ -52,11 +52,17 @@
                               <br>
                               <br>
                               <hr>
-                           <h5>Attachments (Maximum 2)</h5>
-                           <a href="#" class="btn btn-sm">upload file</a>
-                           <br><br><br>
-                           <a href="#" class="btn btn-green">example.doc</a>
+                           <h5>Attachments</h5>
 
+                           <span class="btn btn-file"> Upload File
+                                   {{Form::file('file')}}
+                           </span>
+                           <br><br><br>
+
+                            @if($profile->attachment1 != null)
+                                                   <p class="btn btn-yellow">{{ link_to($profile->attachment1, $profile->attachment2) }}</p>
+
+                            @endif
 
                        </div>
 

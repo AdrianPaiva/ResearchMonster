@@ -42,7 +42,11 @@
 
                                         {{Form::close()}}
                                   </td>
-                                  <td><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a></td>
+                                  <td>
+                                    @if($user->isStudent())
+                                        <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a>
+                                    @endif
+                                  </td>
 
                                 </tr>
 
