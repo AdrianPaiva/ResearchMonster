@@ -10,8 +10,9 @@ class ProfileController extends BaseController
             $userId = Auth::id();
             $user = User::find($userId);
             $profile = $user->profile;
-
-            return View::make("dashboard/profile")->with("title",$title)->with('profile',$profile);
+            $email = $user->email;
+            $skills = unserialize($profile->skills);
+            return View::make("dashboard/profile")->with("title",$title)->with('profile',$profile)->with('email',$email)->with('skills',$skills);
         }
 
     }
@@ -21,17 +22,62 @@ class ProfileController extends BaseController
         // toodo get which profile to here
         $title = "Profile Name";
 
-        return View::make('users.viewProfile')->with("title", $title);
+        $user = User::findOrFail($id);
+        $profile = $user->profile;
+        $skills = unserialize($profile->skills);
+        return View::make('users.viewProfile')->with("title", $title)->with('profile',$profile)->with('skills', $skills);
     }
 
     public function showEditProfile()
     {
         $title = "Edit Profile";
+        $userId = Auth::id();
+        $user = User::find($userId);
+        $profile = $user->profile;
 
-        return View::make("dashboard/editProfile")->with("title",$title);
+        $skills = unserialize($profile->skills);
+
+        return View::make("dashboard/editProfile")->with("title",$title)->with('profile',$profile)->with('skills',$skills);
     }
     public function doEditProfile()
     {
+        $title = "Profile";
+        $userId = Auth::id();
+        $user = User::find($userId);
 
+
+        $rules = [
+           // 'image' => 'image|mimes:jpg,jpeg,png,bmp,gif'
+
+        ];
+        $input = Input::all();
+
+        $validator = Validator::make($input, $rules);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
+
+        $user->profile->program = Input::get('program');
+        $user->profile->experience = Input::get('experience');
+        $user->profile->summary = Input::get('summary');
+
+        $skillArray = explode(',',Input::get('hidden-tags'));
+        $user->profile->skills = serialize($skillArray);
+
+        if (Input::hasFile('image')) {
+            $file = Input::file('image');
+            $destinationPath = public_path() . '/img/';
+            $filename = $file->getClientOriginalName();
+            Input::file('image')->move($destinationPath, $filename);
+
+            $user->profile->picture = '/img/'.$filename ;
+        }
+
+        $user->save();
+        $user->profile->save();
+
+        Session::flash('message', 'Profile Edited Successfully!');
+        return Redirect::to("dashboard/profile");
     }
 }

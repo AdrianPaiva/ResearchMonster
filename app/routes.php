@@ -44,9 +44,15 @@ Route::group(array('before' => 'auth'), function () {
     Route::get('dashboard/notifications', 'NotificationController@showNotifications');
     Route::get('dashboard/profile', 'ProfileController@showProfile');
 
+
+});
+
+//student only pages
+Route::group(array('before' => 'auth|isStudent'), function () {
     Route::get('dashboard/editProfile', 'ProfileController@showEditProfile');
     Route::post('dashboard/editProfile', 'ProfileController@doEditProfile');
 });
+
 
 // must have permission to view users
 Route::group(array('before' => 'auth|canViewUsers'), function () {
@@ -56,6 +62,7 @@ Route::group(array('before' => 'auth|canViewUsers'), function () {
 
 });
 
+//must be admin
 Route::group(array('before' => 'auth|isAdmin'), function () {
 
     Route::get('admin', 'AdminController@showAllUsers');

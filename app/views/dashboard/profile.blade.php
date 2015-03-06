@@ -10,48 +10,59 @@
               <div class="panel-heading">
                 <h3 class="panel-title text-center">{{{$profile->firstName or "First "}}} {{{$profile->lastName or "Last "}}}</h3>
               </div>
-              <div class="panel-body">
 
-            <img class="img-responsive col-xs-2" src="../images/homer.jpg">
+            <div class="panel-body">
 
-                    <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>
+                <div class="col-xs-4">
+                    <img class="img-responsive " src="{{$profile->picture}}">
+                </div>
 
-                    <h5 class="lead">{{{$profile->program or "T127 Computer Programmer Analyst"}}}</h5>
+                <div class="col-xs-8">
+                        <h5 class="lead">{{{$profile->firstName or "First "}}} {{{$profile->lastName or "Last "}}}</h5>
+                        <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>
+                        <h5 class="lead">{{{$profile->program or "Please select your program"}}}</h5>
+                        <h5 class="lead">{{{$email or " "}}}</h5>
+                </div>
 
-                    <h5 class="lead">{{{$profile->email or "email@gmail.com"}}}</h5>
+              <div class="col-xs-12">
 
                     <br>
-     <hr>
-          <h5><u>About Me</u></h5>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
+                <hr>
+                <h5><u>About Me</u></h5>
+                <br>
+                <p>
+                    {{$profile->summary or ''}}
+                </p>
 
-            Nulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.
-            Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.</p>
+                <br>
+                <hr>
 
-     <br>
-  <hr>
-            <h5><u>Experience</u></h5>
-            <br>
-                          <p>
-                            Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
+                <h5><u>Experience</u></h5>
+                <br>
+                <p>
+                    {{$profile->experience or ''}}
+                </p>
+                <br>
+                <hr>
 
-                            Nulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.
-                            Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.</p>
-     <br>
-          <hr>
-                 <h5><u>Skills</u></h5>
-                 <br>
-                         <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p>
+                <h5><u>Skills</u></h5>
+                <br>
+                @if($skills != null)
+                   @foreach($skills as $skill)
+                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill}}</p>
+                   @endforeach
+                @endif
+                <br>
+                 <hr>
 
-    <br>
-    <hr>
-            <h5><u>Attachments</u></h5>
-            <br>
-                <p class="btn btn-sm btn-yellow">Resume</p>
-                <p class="btn btn-sm btn-yellow">Portfolio</p>
-    </div>
+                <h5><u>Attachments</u></h5>
+                <br>
+                    <p class="btn btn-sm btn-yellow">Resume</p>
+                    <p class="btn btn-sm btn-yellow">Portfolio</p>
+
+
+             </div>
+  </div>
 
 
 </div>

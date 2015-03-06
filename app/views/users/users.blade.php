@@ -23,16 +23,16 @@
                         <tr>
                           <td>{{$user->userId}}</td>
                           <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
-                          <td>{{$user->program or "No Program Selected"}}</td>
+                          <td>{{$user->profile->program or "No Program Selected"}}</td>
                           <td>
                              <div class="btn-group">
-                                <a href="#" class="btn btn-default">MYSQL</a>
+                                <a href="#" class="btn btn-default">Skills</a>
                                 <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                    <ul class="dropdown-menu">
-                                      <li><a href="#">Skill</a></li>
-                                       <li><a href="#">Skill</a></li>
-                                        <li><a href="#">Skill</a></li>
-                                       <li><a href="#">Skill</a></li>
+
+                                        @foreach(unserialize($user->profile->skills) as $skill)
+                                           <li>{{$skill}}</li>
+                                        @endforeach
                                     </ul>
                              </div>
                            </td>

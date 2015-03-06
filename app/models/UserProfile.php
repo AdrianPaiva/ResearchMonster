@@ -8,6 +8,7 @@ class UserProfile extends Eloquent
     public $timestamps = false;
     protected $table = "user_profiles";
     protected $fillable = array('userId', 'firstName','lastName');
+    protected $primaryKey = 'userId';
     /*
     public function user()
     {

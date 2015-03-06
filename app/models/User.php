@@ -57,6 +57,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return false;
     }
 
+
+
     public function canJoinProjects()
     {
         if ($this->attributes['role'] == 'student' || $this->attributes['role'] == 'admin') {
@@ -64,4 +66,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         }
         return false;
     }
+
+    public function canRecommend()
+    {
+        if ($this->attributes['role'] == 'professor' ) {
+            return true;
+        }
+        return false;
+    }
+
 }

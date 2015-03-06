@@ -2,11 +2,6 @@
 
 @section('content')
 
-    <script>
-        $.getScript('http://timschlechter.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',function(){
-
-        });
-    </script>
 
 <div class="row">
     @include('dashboard/navPartial')
@@ -18,43 +13,40 @@
           </div>
           <div class="panel-body">
 
-                {{Form::open(array('url' => 'editProfile', 'class' => 'form-horizontal'))}}
+                {{Form::model($profile, array('url' => 'dashboard/editProfile', 'class' => 'form-horizontal', 'files' => true))}}
 
                        <div class="form-group">
-                                 <img class="img-rounded col-xs-2" src="../images/homer.jpg">
-
-                                {{ Form::text('programName','Program Name',array('class'=>'col-xs-3 col-xs-offset-1')) }}
-
-                                {{ Form::email('email','Email',array('class'=>'col-xs-3 col-xs-offset-1')) }}
+                                 <img class="img-rounded col-xs-2" src="{{$profile->picture}}">
+                                {{Form::label("Program name:")}}
+                                {{ Form::text('program',$profile->program,array('class'=>' col-xs-offset-1')) }}
                        </div>
 
-                       <a href="#" class="btn btn-sm btn-yellow">Edit Profile Picture</a>
+                        <span class="btn btn-file"> Upload Profile Picture
+                          {{Form::file('image')}}
+                         </span>
                        <br><br><br>
                        <hr>
+
                         <h5>About Me</h5>
-                       {{ Form::textarea('aboutMe','About Me: here you can provide a summary about yourself.',array('class'=>'col-xs-12', 'id' => 'editor1')) }}
+                       {{ Form::textarea('summary',$profile->summary,array('class'=>'col-xs-12', 'id' => 'editor1')) }}
+
                         <br>
                         <hr>
                         <h5>Experience</h5>
-                       {{ Form::textarea('experience','Experience: Here you can list some of your previous experience.',array('class'=>'col-xs-12', 'id' => 'editor2')) }}
+                       {{ Form::textarea('experience',$profile->experience,array('class'=>'col-xs-12', 'id' => 'editor2')) }}
 
                         <hr>
                         <h5>Skills</h5>
                         <br><br>
+
                        <div class="form-group">
 
                                        <div class="input-group-lg col-xs-10">
-                                           <select multiple="multiple" data-role="tagsinput">
-                                            <div class="btn btn-yellow"></div>
-                                             <option value="Amsterdam">Amsterdam</option>
-                                             <option value="Washington">Washington</option>
-                                             <option value="Sydney">Sydney</option>
-                                             <option value="Beijing">Beijing</option>
-                                             <option value="Cairo">Cairo</option>
-                                           </select>
-                                           <span class="btn btn-sm btn-default">Add Skill</span>
+                                           <input type="text" name="tags"  placeholder="Enter your skill and press enter" class="tm-input form-control"/>
+
                                        </div>
                         </div>
+
 
                        <div class="col-xs-12">
                               <br>
@@ -64,13 +56,22 @@
                            <a href="#" class="btn btn-sm">upload file</a>
                            <br><br><br>
                            <a href="#" class="btn btn-green">example.doc</a>
-                           <a href="#" class="btn btn-danger">Delete</a>
+
 
                        </div>
 
 
                     <br>
                     <br>
+                    @if($errors->has())
+                                        <ul>
+                                            @foreach($errors->all() as $message)
+
+                                                <li class="text-danger">{{ $message }}</li>
+
+                                            @endforeach
+                                    </ul>
+                    @endif
 
                     {{Form::submit('Edit Profile', array('class' => 'btn btn-yellow center-block'))}}
                 {{Form::close()}}
@@ -87,12 +88,20 @@
                 // instance, using default configuration.
                 CKEDITOR.replace( 'editor1' );
                 CKEDITOR.replace( 'editor2' );
+
+                <?php
+                    $js_array = json_encode($skills);
+                    echo "var array = ". $js_array;
+                ?>
+
+                jQuery(".tm-input").tagsManager(
+                {
+                    prefilled:array,
+                    maxTags: 20
+                }
+                );
             </script>
 
-            <script type="text/javascript" >
-                $(document).ready(function () {
-                    $('.skilltable').DataTable();
-                });
-            </script>
+
 
 @stop
