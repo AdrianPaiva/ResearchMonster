@@ -15,12 +15,16 @@ class CreateProjectTable extends Migration {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name')->unique();
-            $table->string('postedBy');
+            $table->integer('userId')->unsigned();
             $table->longText('summary')->nullable();
             $table->longText('experience')->nullable();
             $table->longText('skills')->nullable();
             $table->string('attachment')->nullable();
             $table->string('attachmentName')->nullable();
+            $table->string('postedBy');
+            $table->foreign('userId')
+                ->references('userId')->on('users')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });

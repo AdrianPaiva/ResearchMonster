@@ -20,7 +20,7 @@ class HomeController extends BaseController {
         $title = "GBC Research Monster";
 
         $projects = DB::table('projects')->orderBy('created_at', 'desc')->take(4)->get();
-
+        //$projects = Project::all();
 
 		return View::make('home')->with("title",$title)->with('projects',$projects);
 	}

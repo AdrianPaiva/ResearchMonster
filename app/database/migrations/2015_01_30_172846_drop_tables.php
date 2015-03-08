@@ -23,16 +23,16 @@ class DropTables extends Migration {
             $table->dropIfExists('user_profiles');
 
         });
+        Schema::table('projects', function ($table) {
+            $table->dropIfExists('projects');
 
+        });
         Schema::table('users', function($table)
         {
             $table->dropIfExists('users');
 
         });
-        Schema::table('projects', function ($table) {
-            $table->dropIfExists('projects');
 
-        });
         Schema::table('project_users', function ($table) {
             $table->dropIfExists('project_users');
 

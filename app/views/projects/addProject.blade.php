@@ -8,7 +8,7 @@
     <div class="col-xs-10">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">Project Details</h3>
+            <h3 class="panel-title text-center">Add Project</h3>
           </div>
           <div class="panel-body ">
 

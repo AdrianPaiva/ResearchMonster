@@ -55,12 +55,14 @@
 
         @if(Auth::check())
           @foreach($projects as $proj)
+
             <div class="col-xs-3">
                 <div class="panel panel-default ">
                   <div class="panel-heading btn center-block">
                     <h3 class="panel-title text-center text-primary">{{$proj->name}}</h3>
                   </div>
                   <div class="panel-body ">
+
                     <h6><strong>Posted By:</strong> {{$proj->postedBy}}</h6>
                     <h6><strong>Date Posted:</strong> {{$proj->created_at}}</h6>
                     <hr>
@@ -73,6 +75,7 @@
                   </div>
                 </div>
             </div>
+
           @endforeach
         @endif
 </div>

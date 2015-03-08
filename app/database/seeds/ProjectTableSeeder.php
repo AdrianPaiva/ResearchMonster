@@ -5,21 +5,8 @@ class ProjectTableSeeder extends Seeder
 
     public function run()
     {
-        DB::table('projects')->delete();
-        $project1 = Project::create(array(
-
-
-            'name' => 'project 1',
-            'postedBy' => 'adrian',
-            'summary' => "summary goes here",
-            'experience' => 'exp'
-
-
-        ));
-
         DB::table('users')->delete();
-
-         User::create(array(
+        User::create(array(
 
             'userId' => 123456789,
             'password' => Hash::make('awesome'),
@@ -29,6 +16,32 @@ class ProjectTableSeeder extends Seeder
 
 
         ));
+        DB::table('user_profiles')->delete();
+        UserProfile::create(array(
+
+            'userId' => 123456789,
+            'program' => 'test program name',
+            'firstName' => 'test first name',
+            'lastName' => 'test last name'
+
+        ));
+
+        DB::table('projects')->delete();
+        $project1 = Project::create(array(
+
+
+            'name' => 'project 1',
+            'summary' => "summary goes here",
+            'experience' => 'exp',
+            'userId' => 123456789,
+            'postedBy' => 'Adrian'
+
+
+        ));
+
+
+
+
 
         $user1 = User::create(array(
 
@@ -41,15 +54,8 @@ class ProjectTableSeeder extends Seeder
 
         ));
 
-        DB::table('user_profiles')->delete();
-        UserProfile::create(array(
 
-            'userId' => 123456789,
-            'program' => 'test program name',
-            'firstName' => 'test first name',
-            'lastName' => 'test last name'
 
-        ));
         UserProfile::create(array(
 
             'userId' => 12345678,

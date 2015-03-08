@@ -12,8 +12,8 @@ class AddUserprofileForeignkey extends Migration {
 	 */
 	public function up()
 	{
-        Schema::table('user_profiles', function($table)
-        {
+
+        Schema::table('user_profiles', function ($table) {
             $table->foreign('userId')
                 ->references('userId')->on('users')
                 ->onDelete('cascade');

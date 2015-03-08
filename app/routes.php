@@ -38,8 +38,7 @@ Route::group(array('before' => 'auth'), function () {
         return View::make('projects.skillSearch')->with('title', "Search Projects By Skill");
     });
     Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
-    Route::get('projects/editProject/{id}', 'ProjectController@showEditProject');
-    Route::post('projects/editProject/{id}', 'ProjectController@editProject');
+
 
     Route::get('dashboard/notifications', 'NotificationController@showNotifications');
     Route::get('dashboard/profile', 'ProfileController@showProfile');
@@ -83,6 +82,17 @@ Route::group(array('before' => 'auth|isResearcher'), function () {
     });
 
     Route::post('projects/addProject', 'ProjectController@addProject'); // processes add project
+
+    Route::get('projects/editProject/{id}', function($id){
+
+        $title = 'Edit Project';
+        $project = Project::findOrFail($id);
+        return View::make('projects.editProject')->with("title", $title)->with('project',$project);
+    });
+
+    Route::post('projects/editProject/{id}', 'ProjectController@editProject');
+
+    Route::get('projects/deleteProject/{id}', 'ProjectController@deleteProject');
 });
 
 

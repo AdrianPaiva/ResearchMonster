@@ -26,7 +26,7 @@
                          <tr>
 
                            <td>{{$project->name}}</td>
-                           <td>{{$project->postedBy}}</td>
+                           <td>{{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</td>
                            <td>{{$project->created_at}}</td>
                            <td>
 
