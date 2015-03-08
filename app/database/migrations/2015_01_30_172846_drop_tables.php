@@ -12,9 +12,9 @@ class DropTables extends Migration {
 	 */
 	public function up()
 	{
-        Schema::table('roles', function($table)
+        Schema::table('password_reminders', function($table)
         {
-            $table->dropIfExists('roles');
+            $table->dropIfExists('password_reminders');
 
         });
 
@@ -27,6 +27,14 @@ class DropTables extends Migration {
         Schema::table('users', function($table)
         {
             $table->dropIfExists('users');
+
+        });
+        Schema::table('projects', function ($table) {
+            $table->dropIfExists('projects');
+
+        });
+        Schema::table('project_users', function ($table) {
+            $table->dropIfExists('project_users');
 
         });
 	}

@@ -12,7 +12,7 @@
           </div>
           <div class="panel-body ">
 
-                       {{ Form::open(array('url' => 'addProject', 'class' => 'form-horizontal')) }}
+                       {{ Form::open(array('url' => 'projects/addProject', 'class' => 'form-horizontal')) }}
 
                                     <div class="form-group">
                                       <label class="col-xs-2 control-label" for="name">Name</label>

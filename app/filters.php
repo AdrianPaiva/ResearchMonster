@@ -51,7 +51,7 @@ Route::filter('auth', function()
 
 Route::filter('isResearcher', function () {
 
-    if (!Auth::user()->isResearcher()) {
+    if (!Auth::user()->isResearcher() && !Auth::user()->isAdmin()) {
 
         if (Request::ajax()) {
             return Response::make('Unauthorized', 401);

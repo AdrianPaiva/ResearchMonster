@@ -8,15 +8,15 @@
     <div class="col-xs-10">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">Project Name</h3>
+            <h3 class="panel-title text-center">{{$project->name}}</h3>
           </div>
           <div class="panel-body">
 
             <div class="row">
 
                 <div class="col-xs-6">
-                      <p><strong>Posted By:</strong> Name here</p>
-                      <p><strong>Date Posted:</strong> January 1 2014</p>
+                      <p><strong>Posted By:</strong> {{$project->postedBy}}</p>
+                      <p><strong>Date Posted:</strong> {{$project->created_at}}</p>
                 </div>
 
                 <div class="col-xs-6">
@@ -37,32 +37,31 @@
 
              <hr>
              <strong><p><u>Project Description</u></p></strong>
-
              <p>
-                Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id
-                quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
-                Nulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna
-                ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.
-                Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada,
-                integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
+                {{$project->summary}}
              </p>
              <hr>
               <strong><p><u>Experience Required</u></p></strong>
-
-                          <p>
-                             Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id
-                             quisque ac. Arcu massa vestibulum malesuada, integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
-                             Nulla wisi laoreet suspendisse hendrerit facilisi, mi mattis pariatur adipiscing aliquam pharetra eget. Aenean urna
-                             ipsum donec tellus tincidunt, quam curabitur metus, pretium purus facilisis enim id, integer eleifend vitae volutpat consequat per leo.
-                             Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo. Luctus arcu, urna praesent at id quisque ac. Arcu massa vestibulum malesuada,
-                             integer vivamus elit eu mauris eu, cum eros quis aliquam nisl wisi.
-                          </p>
+                 <p>
+                    {{$project->experience}}
+                 </p>
                 <hr>
               <strong><p><u>Skills Required</u></p></strong>
-                <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p>
+
+              @if($project->skills != null)
+                @foreach(unserialize($project->skills) as $skill)
+                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{$skill}}</p>
+                @endforeach
+              @else
+                <p>No skills required.</p>
+              @endif
 
                 <br><br><hr>
-              <strong><p><u>Attachments</u></p></strong>
+
+                @if($project->attachment != null)
+                <strong><p><u>Attachments</u></p></strong>
+                                          <p class="btn btn-yellow">{{ link_to($project->attachment, $project->attachmentName) }}</p>
+                @endif
           </div>
         </div>
 
@@ -76,7 +75,7 @@
 
 <hr>
 
-@if(Auth::user()->isResearcher())
+@if(Auth::user()->isResearcher() || Auth::user()->isAdmin())
 
 <div class="row">
 
@@ -88,7 +87,7 @@
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title text-center">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Users in Project Name
+                      Users in {{$project->name}}
                     </a>
                   </h4>
                 </div>
@@ -106,27 +105,21 @@
                                                                         </tr>
                                                                       </thead>
                                                                       <tbody>
+                                                                   @foreach($project->users as $user)
+                                                                     @if($user->pivot->accepted == 1)
                                                                         <tr>
-                                                                          <td>100888999</td>
-                                                                          <td>Column content</td>
-                                                                           <td>Column content</td>
+                                                                          <td>{{$user->userId}} </td>
+                                                                          <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
+                                                                           <td>{{$user->email}}</td>
 
                                                                           <td>
                                                                             <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
+                                                                            <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm btn-green pull-right "> View Profile </a>
                                                                           </td>
                                                                         </tr>
-                                                                        <tr>
-                                                                          <td>20000000</td>
-                                                                          <td>Column content</td>
-                                                                          <td>Column content</td>
-                                                                            <td>
-                                                                               <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
-                                                                               <a href="/users/viewProfile/1" class="btn btn-sm btn-green pull-right "> View Profile </a>
-                                                                            </td>
 
-                                                                        </tr>
-
+                                                                     @endif
+                                                                   @endforeach
                                                                       </tbody>
                                                                     </table>
 
@@ -155,14 +148,16 @@
                                                                         </tr>
                                                                       </thead>
                                                                       <tbody>
+                                                                    @foreach($project->users as $user)
+                                                                      @if($user->pivot->accepted == 0)
                                                                         <tr>
-                                                                          <td>100888999</td>
-                                                                          <td>Column content</td>
-                                                                           <td>Column content</td>
+                                                                          <td>{{$user->userId}}</td>
+                                                                          <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
+                                                                           <td>{{$user->email}}</td>
 
                                                                           <td>
                                                                           <div class="text-center">
-                                                                            <a href="/users/viewProfile/1" class="btn btn-sm btn-green"> View Profile </a>
+                                                                            <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm btn-green"> View Profile </a>
                                                                           </div>
 
                                                                           </td>
@@ -171,6 +166,8 @@
                                                                                  <a href="#" class="btn btn-sm btn-danger pull-right "> Deny </a>
                                                                             </td>
                                                                         </tr>
+                                                                      @endif
+                                                                    @endforeach
 
 
                                                                       </tbody>

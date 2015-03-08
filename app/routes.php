@@ -72,13 +72,19 @@ Route::group(array('before' => 'auth|isAdmin'), function () {
     Route::get('admin/students', 'AdminController@showStudents');
     Route::post('admin/editRole', 'AdminController@editRole'); // processes edit role
 
-});
 
 
-Route::get('projects/addProject', function()
-{
-    return View::make('projects.addProject')->with('title',"Add Project");
 });
+// researcher/admin only
+Route::group(array('before' => 'auth|isResearcher'), function () {
+
+    Route::get('projects/addProject', function () {
+        return View::make('projects.addProject')->with('title', "Add Project");
+    });
+
+    Route::post('projects/addProject', 'ProjectController@addProject'); // processes add project
+});
+
 
 Route::get('forgotPassword', function () {
     return View::make('forgotPassword')->with('title', "Forgot password");

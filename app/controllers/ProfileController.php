@@ -20,12 +20,13 @@ class ProfileController extends BaseController
     public function showUserProfile($id) // this shows user profiles on the users page
     {
 
-        $title = "Profile Name";
+
 
         $user = User::findOrFail($id);
         $profile = $user->profile;
         $skills = unserialize($profile->skills);
         $email = $user->email;
+        $title = $user->userId;
         if($user->role != "student")
         {
             return Redirect::to('/');

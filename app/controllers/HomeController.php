@@ -18,7 +18,11 @@ class HomeController extends BaseController {
 	public function showWelcome()
 	{
         $title = "GBC Research Monster";
-		return View::make('home')->with("title",$title);
+
+        $projects = DB::table('projects')->orderBy('created_at', 'desc')->take(4)->get();
+
+
+		return View::make('home')->with("title",$title)->with('projects',$projects);
 	}
 
 }

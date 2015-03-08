@@ -19,6 +19,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasOne('UserProfile', 'userId','userId');
     }
 
+    public function projects()
+    {
+        return $this->belongsToMany('Project', 'project_users', 'user_id', 'project_id')->withPivot('accepted')->withTimestamps();
+    }
+
     public function isAdmin()
     {
         return $this->attributes['role'] == 'admin';
@@ -31,7 +36,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function isResearcher()
     {
-        return $this->attributes['role'] == 'researcher';
+        return $this->attributes['role'] == 'researcher' || $this->attributes['role'] == 'admin';
     }
 
     public function isProfessor()
