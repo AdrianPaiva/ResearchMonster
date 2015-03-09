@@ -58,13 +58,13 @@
 
             <div class="col-xs-3">
                 <div class="panel panel-default ">
-                  <div class="panel-heading btn center-block">
-                    <h3 class="panel-title text-center text-primary">{{$proj->name}}</h3>
+                  <div class="panel-heading center-block ">
+                    <h3 class="panel-title text-center btn-primary text-white text-capitalize">{{$proj->name}}</h3>
                   </div>
                   <div class="panel-body ">
 
-                    <h6><strong>Posted By:</strong> {{$proj->postedBy}}</h6>
-                    <h6><strong>Date Posted:</strong> {{$proj->created_at}}</h6>
+                    <h6 class="text-capitalize"><strong >Posted By:</strong> {{$proj->postedBy}}</h6>
+                    <h6 class="text-capitalize"><strong>Date Posted:</strong> {{$proj->created_at}}</h6>
                     <hr>
                     <p>
                         {{$proj->summary or ""}}

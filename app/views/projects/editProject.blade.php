@@ -12,7 +12,7 @@
           </div>
           <div class="panel-body ">
 
-                       {{ Form::model($project,array('url' => 'projects/editProject/'.$project->id, 'class' => 'form-horizontal')) }}
+                       {{ Form::model($project,array('url' => 'projects/editProject/'.$project->id, 'class' => 'form-horizontal', 'files' => true)) }}
 
                                     <div class="form-group">
                                       <label class="col-xs-2 control-label" for="name">Name</label>

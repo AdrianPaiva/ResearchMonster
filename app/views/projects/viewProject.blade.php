@@ -23,9 +23,9 @@
 
                 <div class="col-xs-6">
                     @if(Auth::user()->isStudent())
-                     <a href="#" class="btn btn-green col-xs-offset-2 ">Apply</a>
+                     <a href="{{URL::to('projects/apply/'.$project->id)}}" class="btn btn-green col-xs-offset-2 ">Apply</a>
                     @endif
-                    @if(Auth::user()->isResearcher())
+                    @if(Auth::user()->isResearcher() && $project->userId == Auth::user()->userId)
                      <a href="{{URL::to('projects/editProject/'. $project->id)}}" class="btn btn-yellow">Edit</a>
                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
 
@@ -67,6 +67,9 @@
                 @endif
           </div>
         </div>
+        @if(Session::has('message'))
+        <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
+        @endif
 
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -133,7 +136,9 @@
                                                                            <td>{{$user->email}}</td>
 
                                                                           <td>
-                                                                            <a href="#" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                                          @if($project->userId == Auth::user()->userId)
+                                                                            <a href="{{URL::to('projects/removeUser/'. $user->userId.'/'.$project->id)}}" class="btn btn-sm btn-danger pull-right"> Remove User </a>
+                                                                          @endif
                                                                             <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm btn-green pull-right "> View Profile </a>
                                                                           </td>
                                                                         </tr>
@@ -182,8 +187,10 @@
 
                                                                           </td>
                                                                            <td>
-                                                                               <a href="#" class="btn btn-sm btn-green "> Accept </a>
-                                                                                 <a href="#" class="btn btn-sm btn-danger pull-right "> Deny </a>
+                                                                           @if($project->userId == Auth::user()->userId)
+                                                                                <a href="{{URL::to('projects/acceptUser/'. $user->userId.'/'.$project->id)}}  " class="btn btn-sm btn-green "> Accept </a>
+                                                                                 <a href="{{URL::to('projects/removeUser/'. $user->userId.'/'.$project->id)}}" class="btn btn-sm btn-danger pull-right "> Deny </a>
+                                                                            @endif
                                                                             </td>
                                                                         </tr>
                                                                       @endif

@@ -155,5 +155,8 @@ div.dataTables_filter input {
     opacity: 0.8;
 
 }
-
+.text-white
+{
+    color: #ffffff;
+}
 

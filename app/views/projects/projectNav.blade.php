@@ -14,15 +14,15 @@
               <p href="#" class="list-group-item btn btn-green">My Projects </p>
 
               @if(Auth::user()->canCreateProjects())
-                <a href="#" class="list-group-item">Created Projects </a>
+                <a href="/projects/createdProjects" class="list-group-item @if( $page == "projects/createdProjects") {{'active'}} @endif ">Created Projects </a>
               @endif
 
-              @if(Auth::user()->canJoinProjects())
-                <a href="#" class="list-group-item">Joined Projects </a>
+              @if(Auth::user()->isStudent())
+                <a href="/projects/joinedProjects" class="list-group-item @if( $page == "projects/joinedProjects") {{'active'}} @endif">Joined Projects </a>
               @endif
 
-              @if(Auth::user()->isStudent() || Auth::user()->isAdmin())
-                <a href="#" class="list-group-item">Recommended Projects </a>
+              @if(Auth::user()->isStudent())
+                <a href="/projects/recommendedProjects" class="list-group-item @if( $page == "projects/recommendedProjects") {{'active'}} @endif">Recommended Projects </a>
               @endif
 
               @if(Auth::user()->canCreateProjects())
