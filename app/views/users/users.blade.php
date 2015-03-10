@@ -25,6 +25,7 @@
                           <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
                           <td>{{$user->profile->program or "No Program Selected"}}</td>
                           <td>
+                          <div class="text-center">
                              <div class="btn-group">
                                 <a href="#" class="btn btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
                                 <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
@@ -38,8 +39,9 @@
                                    @endif
                                     </ul>
                              </div>
+                           </div>
                            </td>
-                          <td><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a></td>
+                          <td class="text-center"><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green"> View Profile </a></td>
                         </tr>
 
                         @endforeach
@@ -54,7 +56,12 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('.table').DataTable();
+        $('.table').DataTable({
+            "pageLength": 50,
+            "columnDefs": [
+                            { "searchable": false, "targets": 4 }
+                          ]
+        });
     });
 </script>
 

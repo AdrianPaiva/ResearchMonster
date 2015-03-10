@@ -53,31 +53,31 @@
 
         @endif
 
-        @if(Auth::check())
-          @foreach($projects as $proj)
+</div>
 
-            <div class="col-xs-3">
-                <div class="panel panel-default ">
-                  <div class="panel-heading center-block ">
-                    <h3 class="panel-title text-center btn-primary text-white text-capitalize">{{$proj->name}}</h3>
-                  </div>
-                  <div class="panel-body ">
+<div class="row">
+            @if(Auth::check())
+              @foreach($projects as $proj)
 
-                    <h6 class="text-capitalize"><strong >Posted By:</strong> {{$proj->postedBy}}</h6>
-                    <h6 class="text-capitalize"><strong>Date Posted:</strong> {{$proj->created_at}}</h6>
-                    <hr>
-                    <p>
-                        {{$proj->summary or ""}}
-                    </p>
+                <div class="col-xs-4">
+                    <div class="well well-lg">
+                        <h2 class="text-center text-capitalize text-primary lead">{{$proj->name}}</h2>
+                        <br>
+                        <p class="text-capitalize"><b class="lead" >Posted By:</b>{{$proj->postedBy}} </p>
+                        <p class="text-capitalize"><strong class="lead">Date Posted:</strong> {{$proj->created_at}}</p>
+                        <hr>
+                        <p class="lead">
+                             {{$proj->summary or ""}}
+                        </p>
                         <div class="text-center">
-                            <a href="{{URL::to('projects/viewProject/'. $proj->id)}}" class="btn-sm btn-green"> View Project </a>
+                              <a href="{{URL::to('projects/viewProject/'. $proj->id)}}" class="btn-sm btn-green"> View Project </a>
                         </div>
-                  </div>
-                </div>
-            </div>
+                    </div>
 
-          @endforeach
-        @endif
+                </div>
+
+              @endforeach
+            @endif
 </div>
 <br>
 <br>

@@ -42,9 +42,9 @@
 
                                         {{Form::close()}}
                                   </td>
-                                  <td>
+                                  <td class="text-center">
                                     @if($user->isStudent())
-                                        <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green pull-right"> View Profile </a>
+                                        <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green"> View Profile </a>
                                     @endif
                                   </td>
 
@@ -69,7 +69,9 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('.table').DataTable();
+        $('.table').DataTable({
+            "pageLength": 50
+        });
     });
 </script>
 

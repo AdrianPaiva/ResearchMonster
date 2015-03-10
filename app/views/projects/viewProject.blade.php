@@ -8,20 +8,21 @@
     <div class="col-xs-10">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">{{$project->name}}</h3>
+            <h3 class="panel-title text-center text-capitalize ">{{$project->name}}</h3>
           </div>
           <div class="panel-body">
 
             <div class="row">
 
-                <div class="col-xs-6">
-                      <p><strong>Posted By:</strong> {{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</p>
+                <div class="col-xs-10">
+                      <p class="text-capitalize"><strong>Posted By:</strong> {{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</p>
+                      <p><strong>Email:</strong> {{$project->user->email}}</p>
                       <p><strong>Date Posted:</strong> {{$project->created_at}}</p>
                 </div>
 
 
 
-                <div class="col-xs-6">
+                <div class="col-xs-2">
                     @if(Auth::user()->isStudent())
                      <a href="{{URL::to('projects/apply/'.$project->id)}}" class="btn btn-green col-xs-offset-2 ">Apply</a>
                     @endif
@@ -189,7 +190,7 @@
                                                                            <td>
                                                                            @if($project->userId == Auth::user()->userId)
                                                                                 <a href="{{URL::to('projects/acceptUser/'. $user->userId.'/'.$project->id)}}  " class="btn btn-sm btn-green "> Accept </a>
-                                                                                 <a href="{{URL::to('projects/removeUser/'. $user->userId.'/'.$project->id)}}" class="btn btn-sm btn-danger pull-right "> Deny </a>
+                                                                                 <a href="{{URL::to('projects/denyUser/'. $user->userId.'/'.$project->id)}}" class="btn btn-sm btn-danger pull-right "> Deny </a>
                                                                             @endif
                                                                             </td>
                                                                         </tr>

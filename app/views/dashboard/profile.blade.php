@@ -31,6 +31,7 @@
                 <h5><u>About Me</u></h5>
                 <br>
                 <p>
+
                     {{$profile->summary or ''}}
                 </p>
 

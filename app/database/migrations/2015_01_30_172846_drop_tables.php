@@ -17,7 +17,10 @@ class DropTables extends Migration {
             $table->dropIfExists('password_reminders');
 
         });
+        Schema::table('notifications', function ($table) {
+            $table->dropIfExists('notifications');
 
+        });
         Schema::table('user_profiles', function($table)
         {
             $table->dropIfExists('user_profiles');
@@ -32,6 +35,11 @@ class DropTables extends Migration {
             $table->dropIfExists('users');
 
         });
+        Schema::table('notifications', function ($table) {
+            $table->dropIfExists('notifications');
+
+        });
+
 
         Schema::table('project_users', function ($table) {
             $table->dropIfExists('project_users');

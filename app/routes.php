@@ -51,7 +51,10 @@ Route::group(array('before' => 'auth|isStudent'), function () {
     Route::get('dashboard/editProfile', 'ProfileController@showEditProfile');
     Route::post('dashboard/editProfile', 'ProfileController@doEditProfile');
 
+    //Route::get('projects/apply/{id}', 'ProjectController@applyForProject');
     Route::get('projects/apply/{id}', 'ProjectController@applyForProject');
+    Route::get('projects/joinedProjects', 'ProjectController@joinedProjects');
+    Route::get('projects/recommendedProjects', 'ProjectController@recommendedProjects');
 
 });
 
@@ -98,6 +101,7 @@ Route::group(array('before' => 'auth|isResearcher'), function () {
     Route::get('projects/deleteProject/{id}', 'ProjectController@deleteProject');
 
     Route::get('projects/acceptUser/{userId}/{projectId}', 'ProjectController@acceptUser');
+    Route::get('projects/denyUser/{userId}/{projectId}', 'ProjectController@denyUser');
     Route::get('projects/removeUser/{userId}/{projectId}', 'ProjectController@removeUser');
 
     Route::get('projects/createdProjects', 'ProjectController@createdProjects');

@@ -5,6 +5,8 @@ class NotificationController extends BaseController{
     public function showNotifications()
     {
         $title = "Notifications";
-        return View::make("dashboard.notifications")->with("title",$title);
+        $notif = Auth::user()->notifications;
+
+        return View::make("dashboard.notifications")->with("title",$title)->with('notif',$notif);
     }
 }

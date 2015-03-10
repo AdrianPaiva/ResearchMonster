@@ -8,8 +8,8 @@
            <div class='list-group'>
              <p  class="list-group-item btn btn-green">Projects</p>
              <a href="/projects"  class="list-group-item @if( $page == "projects") {{'active'}} @endif">All Projects</a>
-             <a href="#" class="list-group-item">New Projects</a>
-             <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Skill Search</a>
+
+             <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Projects By Skill</a>
            <br>
               <p href="#" class="list-group-item btn btn-green">My Projects </p>
 
@@ -22,8 +22,8 @@
               @endif
 
               @if(Auth::user()->isStudent())
-                <a href="/projects/recommendedProjects" class="list-group-item @if( $page == "projects/recommendedProjects") {{'active'}} @endif">Recommended Projects </a>
-              @endif
+                  <a href="/projects/recommendedProjects" class="list-group-item @if( $page == "projects/recommendedProjects") {{'active'}} @endif">Recommended Projects </a>
+               @endif
 
               @if(Auth::user()->canCreateProjects())
                 <a href="/projects/addProject"  class="list-group-item @if( $page == "projects/addProject") {{'active'}} @endif">Add Project </a>
