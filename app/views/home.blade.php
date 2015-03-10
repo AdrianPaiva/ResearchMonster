@@ -66,7 +66,7 @@
                         <p class="text-capitalize"><b class="lead" >Posted By:</b>{{$proj->postedBy}} </p>
                         <p class="text-capitalize"><strong class="lead">Date Posted:</strong> {{$proj->created_at}}</p>
                         <hr>
-                        <p class="lead">
+                        <p>
                              {{$proj->summary or ""}}
                         </p>
                         <div class="text-center">

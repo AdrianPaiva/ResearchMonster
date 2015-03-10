@@ -41,6 +41,7 @@ Route::group(array('before' => 'auth'), function () {
 
 
     Route::get('dashboard/notifications', 'NotificationController@showNotifications');
+    Route::get('dashboard/notifications/delete/{id}', 'NotificationController@deleteNotification');
     Route::get('dashboard/profile', 'ProfileController@showProfile');
 
 
