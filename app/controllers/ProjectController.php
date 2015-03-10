@@ -209,8 +209,20 @@ class ProjectController extends BaseController {
         $user = User::findOrFail($userId);
         $project = Project::findOrFail($projectId);
 
+        // this finds the creator of the project and deletes their notification after they accept or deny it
+        $creatorNotifications = $project->user->notifications;
 
-        // too do check if user already accepted
+        // this finds the creator of the project and deletes their notification after they accept or deny it
+        $creatorNotifications = $project->user->notifications;
+
+        if ($creatorNotifications != null) {
+            foreach ($creatorNotifications as $notif) {
+                if ($notif->applicantId == $userId && $notif->project_id == $projectId && $notif->project_application == 1) {
+                    $notif->delete();
+                }
+            }
+
+        }
 
 
 
@@ -232,6 +244,18 @@ class ProjectController extends BaseController {
     {
         $user = User::findOrFail($userId);
         $project = Project::findOrFail($projectId);
+
+        // this finds the creator of the project and deletes their notification after they accept or deny it
+        $creatorNotifications = $project->user->notifications;
+
+        if ($creatorNotifications != null) {
+            foreach ($creatorNotifications as $notif) {
+                if ($notif->applicantId == $userId && $notif->project_id == $projectId && $notif->project_application == 1) {
+                    $notif->delete();
+                }
+            }
+
+        }
 
         $notif = new Notification();
         $notif->userId = $userId;
