@@ -67,7 +67,8 @@
                         <p class="text-capitalize"><strong class="lead">Date Posted:</strong> {{$proj->created_at}}</p>
                         <hr>
                         <p>
-                             {{$proj->summary or ""}}
+
+                             {{ Str::limit($proj->summary, 500) }}
                         </p>
                         <div class="text-center">
                               <a href="{{URL::to('projects/viewProject/'. $proj->id)}}" class="btn-sm btn-green"> View Project </a>

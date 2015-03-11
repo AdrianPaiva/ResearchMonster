@@ -56,7 +56,8 @@
 
          <ul class="nav navbar-nav navbar-right ">
               @if(Auth::check())
-                   <li class=" @if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif"><a href="{{URL::to('dashboard/notifications')}}">Dashboard <span class="label btn-green">{{Auth::user()->notifications->count()}}</span> </a></li>
+                   <li class=" @if( $page == "dashboard/notifications" || $page == "dashboard/profile" || $page == "dashboard/editProfile" || $page == "dashboard/addProject") {{'active'}} @endif">
+                        <a href="{{URL::to('dashboard/notifications')}}">Dashboard @if(Auth::user()->notifications->count() > 0)<span class="label btn-green">{{Auth::user()->notifications->count()}}</span>@endif </a></li>
                    <li><a href="{{ URL::to('logout') }}">Logout</a></li>
               @else
                    <li class="@if( $page == "login") {{'active'}} @endif"><a href="{{URL::to('/login')}}">Login</a></li>
