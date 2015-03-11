@@ -14,7 +14,7 @@ You can look at the users table migration and seed file for an example!
 
 Use the built-in laravel server instead of apache by typing "php artisan serve" in composer then navigate to "localhost:8000" in your browser.
 
-**If you're getting an error running migrations try running "php artisan migrate:refresh"**
+**If you're getting an error running migrations try running "php artisan migrate:refresh or composer dump-autoload (sudo composer dump-autoload on linux)"**
 
 
 
