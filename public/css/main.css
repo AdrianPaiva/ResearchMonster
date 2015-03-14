@@ -233,3 +233,11 @@ div.dataTables_filter input {
 .alert-message-notice h4 {
     color: #444;
 }
+body
+{
+    margin-top: 85px;
+}
+.img-rounded
+{
+    margin-top: -10px;
+}
