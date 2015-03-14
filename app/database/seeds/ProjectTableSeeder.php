@@ -65,6 +65,27 @@ class ProjectTableSeeder extends Seeder
 
         ));
 
+        $user2 = User::create(array(
+
+            'userId' => 12345677,
+            'password' => Hash::make('awesome'),
+            'email' => 'test@gmail.com',
+            'confirmed' => 1,
+            'role' => 'professor'
+
+
+        ));
+
+
+        UserProfile::create(array(
+
+            'userId' => 12345677,
+            'program' => 'program',
+            'firstName' => 'Adrian',
+            'lastName' => 'Professor'
+
+        ));
+
 
         $project1->users()->attach($user1->userId);
 

@@ -32,7 +32,7 @@
 
                     @endif
                     @if(Auth::user()->isProfessor())
-                     <a href="#" class="btn btn-yellow ">Recommend</a>
+                     <a href="{{URL::to('projects/recommend/'. $project->id)}}" class="btn btn-yellow pull-right">Recommend Students</a>
                     @endif
                 </div>
 
@@ -99,7 +99,7 @@
 
 <hr>
 
-@if(Auth::user()->isResearcher() || Auth::user()->isAdmin())
+@if(Auth::user()->canViewUsers())
 
 <div class="row">
 
@@ -204,6 +204,55 @@
                   </div>
                 </div>
               </div>
+
+              <div class="panel panel-primary">
+                              <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title text-center">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Recommended Users
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+
+                                                              <table class="table table-bordered table-striped table-responsive table-hover ">
+                                                                                    <thead>
+                                                                                      <tr>
+                                                                                        <th>ID</th>
+                                                                                        <th>Name</th>
+                                                                                        <th>Email</th>
+                                                                                        <th></th>
+
+                                                                                      </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                  @foreach($project->recommendedUsers as $user)
+
+                                                                                      <tr>
+                                                                                        <td>{{$user->userId}}</td>
+                                                                                        <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
+                                                                                         <td>{{$user->email}}</td>
+
+                                                                                        <td>
+                                                                                        <div class="text-center">
+                                                                                          <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm btn-green"> View Profile </a>
+                                                                                        </div>
+
+                                                                                        </td>
+
+                                                                                      </tr>
+
+                                                                                  @endforeach
+
+
+                                                                                    </tbody>
+                                                                                  </table>
+
+                                </div>
+                              </div>
+                            </div>
+
 
             </div>
 

@@ -3,12 +3,16 @@
 @section('content')
 
 <div class="row">
+    @include('projects/projectNav')
 
-        @include('users/userNav')
-           <div class="col-xs-10 ">
-                    <table class="table table-bordered table-striped table-responsive table-hover ">
+    <div class="col-xs-10">
+
+            {{Form::open(array('url' => 'projects/recommend/'.$project->id ))}}
+
+                 <table class="table table-bordered table-striped table-responsive table-hover ">
                       <thead>
                         <tr>
+                          <th>Select Student(s)</th>
                           <th>ID</th>
                           <th>Name</th>
                           <th>Program</th>
@@ -21,6 +25,13 @@
                       @foreach($users as $user)
 
                         <tr>
+                          <td>
+                            <div class="btn-group">
+
+                                <input type="checkbox" name="check[]" class="btn" style="" value="{{$user->userId}}"/>
+                            </div>
+
+                          </td>
                           <td>{{$user->userId}}</td>
                           <td>{{$user->profile->firstName}} {{$user->profile->lastName}}</td>
                           <td>{{$user->profile->program or "No Program Selected"}}</td>
@@ -47,25 +58,29 @@
                         @endforeach
 
                       </tbody>
-                    </table>
-                    <br>
-                    <br>
+                 </table>
 
-                </div>
-        	</div>
+                {{Form::submit('Recommend Students',array('class' => 'btn btn-primary center-block'))}}
+            {{Form::close()}}
+
+            @if(Session::has('message'))
+            <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
+            @endif
+
+    </div>
+</div>
 
 <script type="text/javascript" >
     $(document).ready(function () {
         $('.table').DataTable({
             "pageLength": 25,
             "columnDefs": [
-                            { "searchable": false, "targets": 4 }
+                            { "searchable": false, "targets": 5 }
                           ]
         });
 
 
     });
 </script>
-
-
 @stop
+

@@ -11,7 +11,9 @@
 
              <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Projects By Skill</a>
            <br>
-              <p href="#" class="list-group-item btn btn-green">My Projects </p>
+              @if(Auth::user()->canCreateProjects() || Auth::user()->isStudent() )
+                <p href="#" class="list-group-item btn btn-green">My Projects </p>
+              @endif
 
               @if(Auth::user()->canCreateProjects())
                 <a href="/projects/createdProjects" class="list-group-item @if( $page == "projects/createdProjects") {{'active'}} @endif ">Created Projects </a>

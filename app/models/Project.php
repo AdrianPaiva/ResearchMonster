@@ -10,6 +10,12 @@ class Project extends Eloquent {
         return $this->belongsToMany('User', 'project_users', 'project_id','user_id')->withPivot('accepted')->withTimestamps();
     }
 
+    public function recommendedUsers()
+    {
+        return $this->belongsToMany('User', 'project_recommended_users', 'project_id', 'user_id')->withTimestamps();
+    }
+
+
     public function user() //project owner
     {
         return $this->hasOne('User', 'userId', 'userId');

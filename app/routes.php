@@ -68,6 +68,21 @@ Route::group(array('before' => 'auth|canViewUsers'), function () {
 
 });
 
+Route::group(array('before' => 'auth|isProfessor'), function () {
+
+    Route::get('projects/recommend/{id}', function ($id) {
+        $title = 'Recommend Students';
+        $project = Project::findOrFail($id);
+        $users = User::where('role', '=', 'student')->get();
+
+        return View::make('projects.recommend')->with("title", $title)->with('project', $project)->with('users',$users);
+    });
+
+    Route::post('projects/recommend/{id}', 'RecommendationController@recommend');
+});
+
+
+
 //must be admin
 Route::group(array('before' => 'auth|isAdmin'), function () {
 

@@ -26,9 +26,7 @@
                 </div>
 
                 <div class="col-xs-2">
-                     @if(Auth::user()->canRecommend())
-                        <a href="#" class="btn btn-sm btn-yellow">Recommend</a>
-                     @endif
+
                 </div>
 
 

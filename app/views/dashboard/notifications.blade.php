@@ -32,6 +32,14 @@
                                           @endif
                                         @endif
 
+                                        @if($n->title === 'User Recommendation')
+                                            <a href="{{URL::to('users/viewProfile/'.$n->applicantId)}}" class="btn-sm btn-green"> View Profile</a>
+                                        @endif
+
+                                        @if($n->title === 'Project Recommendation')
+                                             <a href="{{URL::to('projects/apply/'.$n->project_id)}}" class="btn btn-green col-xs-offset-2 ">Apply</a>
+                                        @endif
+
 
                                         </div>
                                     @endforeach
