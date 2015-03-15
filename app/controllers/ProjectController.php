@@ -39,19 +39,14 @@ class ProjectController extends BaseController {
 
 
         $projects = Project::all()->filter(function ($project) {
-            $userSkills = unserialize(Auth::user()->profile->skills);
-            $projectSkills = unserialize($project->skills);
 
-            if($userSkills && $projectSkills != null)
-            {
-                foreach ($projectSkills as $projectSkill) {
-                    foreach ($userSkills as $userSkill) {
-                        if ($projectSkill === $userSkill) {
+                foreach ($project->skills as $projectSkill) {
+                    foreach (Auth::user()->skills as $userSkill) {
+                        if ($projectSkill->name === $userSkill->name && !$project->users->contains(Auth::user()->userId)) {
                             return true;
                         }
                     }
                 }
-            }
 
         });
 
@@ -96,7 +91,17 @@ class ProjectController extends BaseController {
         $project->experience = Input::get('experience');
         $project->userId = Auth::user()->userId;
         $skillArray = explode(',', Input::get('hidden-tags'));
-        $project->skills = serialize($skillArray);
+        //$project->skills = serialize($skillArray);
+
+        $project->save();
+        foreach ($skillArray as $skill) {
+            $sk = new Skill();
+            $sk->name = $skill;
+            $sk->save();
+
+            $project->skills()->attach($sk->id);
+
+        }
 
         if (Input::hasFile('file')) {
             $file = Input::file('file');
@@ -148,7 +153,8 @@ class ProjectController extends BaseController {
         $project->experience = Input::get('experience');
 
         $skillArray = explode(',', Input::get('hidden-tags'));
-        $project->skills = serialize($skillArray);
+        //$project->skills = serialize($skillArray);
+
 
         if (Input::hasFile('file')) {
             $file = Input::file('file');
@@ -162,6 +168,16 @@ class ProjectController extends BaseController {
 
         $project->save();
 
+        foreach ($skillArray as $skill) {
+            $sk = new Skill();
+            $sk->name = $skill;
+            $sk->save();
+
+            $project->skills()->attach($sk->id);
+
+        }
+        $project->save();
+
 
         return Redirect::to('projects/viewProject/' . $project->id);
 
@@ -170,6 +186,7 @@ class ProjectController extends BaseController {
     {
         $project = Project::findOrFail($id);
         $project->users()->detach();
+        $project->skills()->detach();
         $project->delete();
 
         return Redirect::to('projects')->with('title',"Projects");

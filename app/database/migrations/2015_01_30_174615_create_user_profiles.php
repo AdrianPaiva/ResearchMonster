@@ -22,7 +22,6 @@ class CreateUserProfiles extends Migration {
             $table->string('picture')->nullable();
             $table->longText('summary')->nullable();
             $table->longText('experience')->nullable();
-            $table->longText('skills')->nullable();
             $table->string('attachment1')->nullable();
             $table->string('attachment2')->nullable();
 

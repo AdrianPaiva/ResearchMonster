@@ -11,7 +11,8 @@ class ProfileController extends BaseController
             $user = User::find($userId);
             $profile = $user->profile;
             $email = $user->email;
-            $skills = unserialize($profile->skills);
+            //$skills = unserialize($profile->skills);
+            $skills = $user->skills;
             return View::make("dashboard/profile")->with("title",$title)->with('profile',$profile)->with('email',$email)->with('skills',$skills);
         }
 
@@ -24,7 +25,8 @@ class ProfileController extends BaseController
 
         $user = User::findOrFail($id);
         $profile = $user->profile;
-        $skills = unserialize($profile->skills);
+        $skills = $user->skills;
+
         $email = $user->email;
         $title = $user->userId;
         if($user->role != "student")
@@ -41,7 +43,8 @@ class ProfileController extends BaseController
         $user = User::find($userId);
         $profile = $user->profile;
 
-        $skills = unserialize($profile->skills);
+        //$skills = unserialize($profile->skills);
+        $skills = $user->skills;
 
         return View::make("dashboard/editProfile")->with("title",$title)->with('profile',$profile)->with('skills',$skills);
     }
@@ -69,7 +72,17 @@ class ProfileController extends BaseController
         $user->profile->summary = Input::get('summary');
 
         $skillArray = explode(',',Input::get('hidden-tags'));
-        $user->profile->skills = serialize($skillArray);
+        //$user->profile->skills = serialize($skillArray);
+
+        foreach($skillArray as $skill)
+        {
+            $sk = new Skill();
+            $sk->name = $skill;
+            $sk->save();
+
+            $user->skills()->attach($sk->id);
+
+        }
 
         if (Input::hasFile('image')) {
             $file = Input::file('image');

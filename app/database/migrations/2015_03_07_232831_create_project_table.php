@@ -18,7 +18,6 @@ class CreateProjectTable extends Migration {
             $table->integer('userId')->unsigned();
             $table->longText('summary')->nullable();
             $table->longText('experience')->nullable();
-            $table->longText('skills')->nullable();
             $table->string('attachment')->nullable();
             $table->string('attachmentName')->nullable();
             $table->string('postedBy');

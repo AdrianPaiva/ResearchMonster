@@ -27,6 +27,12 @@ class Project extends Eloquent {
     }
 
 
+    public function skills()
+    {
+        return $this->belongsToMany('Skill', 'project_skills', 'project_id', 'skill_id')->withTimestamps();
+    }
+
+
 
 
 }

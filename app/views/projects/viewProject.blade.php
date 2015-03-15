@@ -53,8 +53,8 @@
               <strong><p><u>Skills Required</u></p></strong>
 
               @if($project->skills != null)
-                @foreach(unserialize($project->skills) as $skill)
-                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{$skill}}</p>
+                @foreach($project->skills as $skill)
+                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{$skill->name}}</p>
                 @endforeach
               @else
                 <p>No skills required.</p>

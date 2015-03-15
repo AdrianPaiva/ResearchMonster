@@ -89,7 +89,11 @@
      CKEDITOR.replace( 'experience' );
 
     <?php
-            $js_array = json_encode(unserialize($project->skills));
+    $values = array();
+                                foreach ($project->skills as $item) {
+                                    $values[] = $item->name;
+                                }
+            $js_array = json_encode($values);
              echo "var array = ". $js_array;
     ?>
 

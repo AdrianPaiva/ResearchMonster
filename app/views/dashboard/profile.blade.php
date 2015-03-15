@@ -54,7 +54,7 @@
                 <br>
                 @if($skills != null)
                    @foreach($skills as $skill)
-                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill}}</p>
+                     <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill->name}}</p>
                    @endforeach
                 @else
                     {{"No skills selected"}}

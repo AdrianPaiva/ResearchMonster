@@ -30,13 +30,11 @@
                                 <a href="#" class="btn btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
                                 <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                    <ul class="dropdown-menu">
-                                   @if($user->profile->skills != null)
+                                        @foreach($user->skills as $skill)
 
-                                        @foreach(unserialize($user->profile->skills) as $skill)
-
-                                           <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill}}</p>
+                                           <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill->name}}</p>
                                         @endforeach
-                                   @endif
+
                                     </ul>
                              </div>
                            </div>

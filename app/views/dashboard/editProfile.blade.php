@@ -96,7 +96,12 @@
                 CKEDITOR.replace( 'editor2' );
 
                 <?php
-                    $js_array = json_encode($skills);
+                    $values = array();
+                            foreach ($skills as $item) {
+                                $values[] = $item->name;
+                            }
+
+                    $js_array = json_encode($values);
                     echo "var array = ". $js_array;
                 ?>
 
