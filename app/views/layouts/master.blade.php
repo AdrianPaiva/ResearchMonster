@@ -12,7 +12,7 @@
     {{ HTML::style('css/main.css'); }}
     {{ HTML::style('css/tagsinput.css'); }}
     {{ HTML::style('css/tagmanager.css'); }}
-
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,400' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
