@@ -121,7 +121,7 @@ div.dataTables_filter {
 }
 
 div.dataTables_filter label {
-    font-weight: normal;
+    font-weight: bold;
     white-space: nowrap;
     text-align: left;
 
