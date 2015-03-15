@@ -15,7 +15,7 @@
                        {{ Form::model($project,array('url' => 'projects/editProject/'.$project->id, 'class' => 'form-horizontal', 'files' => true)) }}
 
                                     <div class="form-group">
-                                      <label class="col-xs-2 control-label" for="name">Name</label>
+                                      <label class="col-xs-2 control-label lead" for="name">Name</label>
                                       <div class="col-xs-2">
 
                                         {{ Form::text('name',$project->name,array('class'=>' form-control')) }}
@@ -23,7 +23,7 @@
                                     </div>
                                     <br>
                                  <div class="form-group">
-                                   <label class="col-xs-2 control-label" for="summary">Description</label>
+                                   <label class="col-xs-2 control-label lead" for="summary">Description</label>
                                    <div class="col-xs-10">
                                      {{ Form::textarea('summary',$project->summary,array('class'=>'col-xs-12', 'id' => 'summary')) }}
                                    </div>
@@ -32,7 +32,7 @@
                                 <br>
 
                                      <div class="form-group">
-                                       <label class="col-xs-2 control-label" for="experience">Experience Required</label>
+                                       <label class="col-xs-2 control-label lead" for="experience">Experience Required</label>
                                        <div class="col-xs-10">
                                          {{ Form::textarea('experience',$project->experience,array('class'=>'col-xs-12', 'id' => 'experience')) }}
                                        </div>
@@ -41,7 +41,7 @@
                             <br>
 
                         <div class="form-group">
-                              <label class="col-xs-2 control-label" for="skills">Skills Required</label>
+                              <label class="col-xs-2 control-label lead" for="skills">Skills Required</label>
                               <div class="input-group-lg col-xs-10" id="skills">
                                     <input type="text" name="tags"  placeholder="Enter your skill and press enter" class="tm-input form-control"/>
 
@@ -50,7 +50,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-xs-2 control-label">Attachment</label>
+                                <label class="col-xs-2 control-label lead">Attachment</label>
                                <span class="btn btn-file input-group" > Upload File
                                        {{Form::file('file')}}
                                 </span>
