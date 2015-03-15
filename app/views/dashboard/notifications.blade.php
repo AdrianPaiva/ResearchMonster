@@ -43,6 +43,10 @@
 
                                         </div>
                                     @endforeach
+                                    
+                                    @if(!$notif->count())
+                                        {{"You don't have any new notifications."}}
+                                    @endif
                                     </div>
                             	</div>
               </div>
