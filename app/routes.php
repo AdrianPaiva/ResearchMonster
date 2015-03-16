@@ -34,21 +34,28 @@ Route::post('register', 'UserController@registerUser');// this processes registe
 Route::group(array('before' => 'auth'), function () {
 
     Route::get('projects', 'ProjectController@showAllProjects');
-    Route::get('projects/skillSearch', function () {
-        return View::make('projects.skillSearch')->with('title', "Search Projects By Skill");
-    });
-    Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
 
+    Route::get('projects/skillSearch', function () {
+        $skills = DB::table('skills')
+            ->select('id', 'name')
+            ->groupBy('name')
+            ->get();
+
+        return View::make('projects.skillSearch')->with('title', "Search Projects By Skill")->with('skills',$skills);
+    });
+
+    Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
 
     Route::get('dashboard/notifications', 'NotificationController@showNotifications');
     Route::get('dashboard/notifications/delete/{id}', 'NotificationController@deleteNotification');
-    Route::get('dashboard/profile', 'ProfileController@showProfile');
+
 
 
 });
 
 //student only pages
 Route::group(array('before' => 'auth|isStudent'), function () {
+    Route::get('dashboard/profile', 'ProfileController@showProfile');
     Route::get('dashboard/editProfile', 'ProfileController@showEditProfile');
     Route::post('dashboard/editProfile', 'ProfileController@doEditProfile');
 

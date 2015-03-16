@@ -17,14 +17,12 @@
                                 </tr>
                               </thead>
                               <tbody>
+                              @foreach($skills as $skill)
                                 <tr>
-                                  <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                                  <td><p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p></td>
+                                  <td style="width: 200px;"><input type="checkbox" class="checkbox pull-right" value="{{$skill->id}}"></td>
+                                  <td><p class="btn btn-green "><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill->name}}</p></td>
                                 </tr>
-                                <tr>
-                                  <td><input type="checkbox" class="checkbox pull-right" value=""></td>
-                                  <td><p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> PHP</p></td>
-                                </tr>
+                              @endforeach
                               </tbody>
                             </table>
                              <br><br><br><br>
