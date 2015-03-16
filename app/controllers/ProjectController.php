@@ -36,7 +36,7 @@ class ProjectController extends BaseController {
     }
     public function recommendedProjects()
     {
-        /*
+
         $projects = Project::all()->filter(function ($project) {
 
                 foreach ($project->skills as $projectSkill) {
@@ -48,7 +48,7 @@ class ProjectController extends BaseController {
                 }
 
         });
-        */
+        /*
 
         $userSkills = Auth::user()->skills;
 
@@ -63,7 +63,7 @@ class ProjectController extends BaseController {
             // Return the count of A minus the count of B
             return $aMatchingSkills->count() - $bMatchingSkills->count();
         });
-
+        */
         return View::make('projects.recommendedProjects')->with("title", "Recommended Projects")->with('projects', $projects);
     }
 
