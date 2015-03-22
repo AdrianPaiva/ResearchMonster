@@ -244,4 +244,7 @@ body
 {
     margin-top: -10px;
 }
-
+.btn
+{
+    text-transform: capitalize;
+}

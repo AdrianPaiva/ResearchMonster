@@ -29,6 +29,7 @@
 <script type="text/javascript" charset="utf8" src="js/jvfloat.min.js"></script>
 <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
 <script src="/js/tagmanager.js"></script>
+<script src="/js/jquery.shorten.js"></script>
 
 
   <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">

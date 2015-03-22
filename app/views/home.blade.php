@@ -67,8 +67,10 @@
                         <p class="text-capitalize"><strong class="lead">Date Posted:</strong> {{$proj->created_at}}</p>
                         <hr>
                         <p>
+                        <div class='summary'>
+                            {{ $proj->summary}}
+                        </div>
 
-                             {{ Str::limit($proj->summary, 500) }}
                         </p>
                         <div class="text-center">
                               <a href="{{URL::to('projects/viewProject/'. $proj->id)}}" class="btn-sm btn-green"> View Project </a>
@@ -89,5 +91,5 @@
 
 @include('layouts/hr')
 
-
+<script type="text/javascript">$(document).ready(function(){$(".summary").shorten({"showChars" : 500});});</script>
 @stop

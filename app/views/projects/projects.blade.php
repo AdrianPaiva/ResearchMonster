@@ -14,6 +14,7 @@
                         <tr>
 
                           <th>Name</th>
+                          <th style="width: 35%;">Description</th>
                           <th>Posted By</th>
                           <th>Date Posted</th>
                           <th>Required Skills</th>
@@ -26,6 +27,7 @@
                          <tr>
 
                            <td>{{$project->name}}</td>
+                           <td class="summary">{{$project->summary}}</td>
                            <td>{{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</td>
                            <td>{{$project->created_at}}</td>
                            <td>
@@ -45,7 +47,7 @@
                            </td>
                            <td>
                                <div class="text-center">
-                                <a href="{{URL::to('projects/viewProject/'. $project->id)}}" class="btn-sm btn-green"> View Project </a>
+                                <a href="{{URL::to('projects/viewProject/'. $project->id)}}" class="btn btn-sm btn-green"> View Project </a>
                                </div>
                            </td>
                          </tr>
@@ -63,7 +65,7 @@
         $('.table').DataTable({
             "pageLength": 25,
             "columnDefs": [
-                { "searchable": false, "targets": 4 }
+                { "searchable": false, "targets": 4}
               ],
               "order": [ 2, 'desc']
         });
@@ -71,7 +73,8 @@
         
     });
     
-    
 </script>
+
+<script type="text/javascript">$(document).ready(function(){$(".summary").shorten();});</script>
 
 @stop
