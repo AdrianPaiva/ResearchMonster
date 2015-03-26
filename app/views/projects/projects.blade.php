@@ -33,7 +33,7 @@
                            <td>
                             <div class="text-center">
                              <div class="btn-group">
-                                   <a href="#" class="btn btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
+                                   <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
                                        <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                                  <ul class="dropdown-menu">
 
@@ -47,7 +47,7 @@
                            </td>
                            <td>
                                <div class="text-center">
-                                <a href="{{URL::to('projects/viewProject/'. $project->id)}}" class="btn btn-sm btn-green"> View Project </a>
+                                <a href="{{URL::to('projects/viewProject/'. $project->id)}}" class="btn btn-sm"> View Project </a>
                                </div>
                            </td>
                          </tr>
@@ -65,9 +65,9 @@
         $('.table').DataTable({
             "pageLength": 25,
             "columnDefs": [
-                { "searchable": false, "targets": 4}
+                { "searchable": false, "targets": 5}
               ],
-              "order": [ 2, 'desc']
+              "order": [ 3, 'desc']
         });
         
         

@@ -21,6 +21,9 @@ class CreateProjectTable extends Migration {
             $table->string('attachment')->nullable();
             $table->string('attachmentName')->nullable();
             $table->string('postedBy');
+            $table->string('projectPartner')->nullable();
+            $table->string('centre')->nullable();
+            $table->string('principalInvestigator')->nullable();
             $table->foreign('userId')
                 ->references('userId')->on('users')
                 ->onDelete('cascade');

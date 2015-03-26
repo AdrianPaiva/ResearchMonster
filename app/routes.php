@@ -43,6 +43,8 @@ Route::group(array('before' => 'auth'), function () {
 
         return View::make('projects.skillSearch')->with('title', "Search Projects By Skill")->with('skills',$skills);
     });
+    Route::get('projects/skillSearch/{skill}', 'ProjectController@popularSkills');
+    Route::post('projects/skillSearch', 'ProjectController@skillSearch');
 
     Route::get('projects/viewProject/{id}', 'ProjectController@viewProject');
 

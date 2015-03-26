@@ -10,9 +10,8 @@
 	{{ HTML::style('//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css'); }}
 	{{ HTML::style('css/jvfloat.css'); }}
     {{ HTML::style('css/main.css'); }}
-    {{ HTML::style('css/tagsinput.css'); }}
     {{ HTML::style('css/tagmanager.css'); }}
-    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,400' rel='stylesheet' type='text/css'>
+
 
 </head>
 <body>
@@ -37,7 +36,7 @@
 
     	<ul class="nav navbar-nav navbar-left  ">
             <a class="navbar-brand" href="/"><img class="img-rounded " width="70px" height="40px"  src="/images/gbc_small2.png"></a>
-    	    <li><h3 class="mainTitle"><b class="text-success lead ">GBC</b> Research Monster</h3></li>
+    	    <li><h3 class="mainTitle">Research Monster</h3></li>
 
             @if(Auth::check())
                 <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>

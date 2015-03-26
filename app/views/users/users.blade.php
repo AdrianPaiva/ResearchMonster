@@ -27,7 +27,7 @@
                           <td>
                           <div class="text-center">
                              <div class="btn-group">
-                                <a href="#" class="btn btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
+                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Skills</a>
                                 <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                    <ul class="dropdown-menu">
                                         @foreach($user->skills as $skill)
@@ -39,7 +39,7 @@
                              </div>
                            </div>
                            </td>
-                          <td class="text-center"><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green"> View Profile </a></td>
+                          <td class="text-center"><a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm "> View Profile </a></td>
                         </tr>
 
                         @endforeach

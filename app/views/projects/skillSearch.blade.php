@@ -9,6 +9,8 @@
         @include('projects/projectNav')
 
                 <div class="col-md-10 ">
+                {{Form::open(array('url' => 'projects/skillSearch'))}}
+
                             <table class="table table-bordered table-hover ">
                               <thead>
                                 <tr>
@@ -19,7 +21,7 @@
                               <tbody>
                               @foreach($skills as $skill)
                                 <tr>
-                                  <td style="width: 200px;"><input type="checkbox" class="checkbox pull-right" value="{{$skill->id}}"></td>
+                                  <td style="width: 200px;"><input type="checkbox" name="skills[{{$skill->id}}]" class="checkbox pull-right" value="{{$skill->name}}"></td>
                                   <td><p class="btn btn-green "><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{$skill->name}}</p></td>
                                 </tr>
                               @endforeach
@@ -27,10 +29,11 @@
                             </table>
                              <br><br><br><br>
                              <div class="text-center">
-                                <a href="" class="btn-lg btn-green">Search Projects</a>
+                                {{Form::submit("Search Projects",array("class" => "btn-lg btn-green"))}}
+
                              </div>
 
-
+                {{Form::close()}}
                 </div>
 </div>
 

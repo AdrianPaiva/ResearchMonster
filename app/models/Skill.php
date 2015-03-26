@@ -10,6 +10,10 @@ class Skill extends Eloquent {
         return $this->belongsToMany('User', 'user_skills', 'user_id', 'skill_id')->withTimestamps();
     }
     */
+    public function projects()
+    {
+        return $this->belongsToMany('Project', 'project_skills', 'project_id', 'skill_id')->withTimestamps();
+    }
 
 
 }

@@ -79,7 +79,7 @@
                                     </ul>
                     @endif
 
-                    {{Form::submit('Edit Profile', array('class' => 'btn btn-yellow center-block'))}}
+                    {{Form::submit('Edit Profile', array('class' => 'btn btn-primary center-block'))}}
                 {{Form::close()}}
 
           </div>

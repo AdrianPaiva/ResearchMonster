@@ -22,6 +22,37 @@ class ProjectController extends BaseController {
 
     }
 
+    public function skillSearch()
+    {
+        $projects = Project::all()->filter(function ($project) {
+            $skills = Input::get('skills');
+            foreach ($project->skills as $projectSkill) {
+                if(is_array($skills))
+                {
+                    foreach ($skills as $userSkill) {
+                        if ($projectSkill->name === $userSkill) {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+        });
+
+        return View::make('projects.projects')->with("title", "Projects")->with('projects', $projects);
+    }
+    public function popularSkills($skill)
+    {
+        $projects = Project::all()->filter(function ($project) {
+            foreach ($project->skills as $projectSkill) {
+               if ($projectSkill->name === Route::input('skill')) {
+                            return true;
+               }
+            }
+        });
+
+        return View::make('projects.projects')->with("title", "Projects")->with('projects', $projects);
+    }
     public function joinedProjects() // returns the projects the student is accepted to
     {
         $all = Auth::user()->projects;
@@ -169,6 +200,7 @@ class ProjectController extends BaseController {
         $skillArray = explode(',', Input::get('hidden-tags'));
         //$project->skills = serialize($skillArray);
 
+        $project->skills()->detach();
 
         if (Input::hasFile('file')) {
             $file = Input::file('file');

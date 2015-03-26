@@ -52,7 +52,7 @@ class ProfileController extends BaseController
     {
         $title = "Profile";
         $userId = Auth::id();
-        $user = User::find($userId);
+        $user = User::findOrFail($userId);
 
 
         $rules = [
@@ -73,6 +73,8 @@ class ProfileController extends BaseController
 
         $skillArray = explode(',',Input::get('hidden-tags'));
         //$user->profile->skills = serialize($skillArray);
+
+        $user->skills()->detach();
 
         foreach($skillArray as $skill)
         {

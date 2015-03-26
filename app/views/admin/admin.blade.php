@@ -38,13 +38,13 @@
                                                 <option value="professor" @if($user->role == "professor") {{'selected = selected'}} @endif > Professor </option>
                                             </select>
 
-                                            {{Form::submit('Edit Role!', array('class' => 'btn btn-sm btn-yellow pull-right'))}}
+                                            {{Form::submit('Edit Role!', array('class' => 'btn btn-sm btn-primary pull-right'))}}
 
                                         {{Form::close()}}
                                   </td>
                                   <td class="text-center">
                                     @if($user->isStudent())
-                                        <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn-sm btn-green"> View Profile </a>
+                                        <a href="{{URL::to('users/viewProfile/'. $user->userId)}}" class="btn btn-sm "> View Profile </a>
                                     @endif
                                   </td>
 
