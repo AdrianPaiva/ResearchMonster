@@ -11,6 +11,7 @@
 	{{ HTML::style('css/jvfloat.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::style('css/tagmanager.css'); }}
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -36,7 +37,7 @@
 
     	<ul class="nav navbar-nav navbar-left  ">
             <a class="navbar-brand" href="/"><img class="img-rounded " width="70px" height="40px"  src="/images/gbc_small2.png"></a>
-    	    <li><h3 class="mainTitle">Research Monster</h3></li>
+    	    <li><h3 class="mainTitle">RESEARCH MONSTER</h3></li>
 
             @if(Auth::check())
                 <li class="@if( $page == "/") {{'active'}} @endif"><a href="/" >Home</a></li>
