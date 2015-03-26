@@ -137,6 +137,8 @@ Route::get('forgotPassword', function () {
     return View::make('forgotPassword')->with('title', "Forgot password");
 });
 Route::post('forgotPassword', 'RemindersController@postRemind');
+Route::get('password/reset/{token}', 'RemindersController@getReset');
+Route::post('password/reset/{token}', 'RemindersController@postReset');
 
 Route::get('register/verify/{confirmationCode}', [
     'as' => 'confirmation_path',

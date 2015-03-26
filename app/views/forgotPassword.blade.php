@@ -14,7 +14,7 @@
                 <br>
                 <br>
 
-                <form action="forgotPassword" method="POST">
+                <form action="/forgotPassword" method="POST">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email">
                     <input type="submit" class="btn btn-green" value="Send Reminder">
