@@ -19,6 +19,7 @@
                                  <img class="img-rounded col-xs-2" src="{{$profile->picture}}">
                                 {{Form::label("Program name:")}}
                                 {{ Form::text('program',$profile->program,array('class'=>' col-xs-offset-1')) }}
+                                {{Form::label("(e.g. T127 Programmer Analyst)")}}
                        </div>
 
                         <span class="btn btn-file"> Upload Profile Picture

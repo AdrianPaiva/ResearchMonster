@@ -8,7 +8,7 @@
 
         @include('projects/projectNav')
 
-                <div class="col-md-10 ">
+                <div class="col-xs-10 ">
                 {{Form::open(array('url' => 'projects/skillSearch'))}}
 
                             <table class="table table-bordered table-hover ">
@@ -40,7 +40,9 @@
 
 <script type="text/javascript" >
     $(document).ready(function () {
-        $('.table').DataTable();
+        $('.table').DataTable({
+            "pageLength": 25
+        });
     });
 </script>
 

@@ -22,6 +22,31 @@
                                       </div>
                                     </div>
                                     <br>
+                                    <div class="form-group">
+                                                                           <label class="col-xs-2 control-label lead" for="centre">Centre</label>
+                                                                             <div class="col-xs-2">
+                                                                                  <select name="centre" id="centre">
+                                                                                    <option value="Health Sciences" @if($project->centre == "Health Sciences") {{'selected = selected'}} @endif>Health Sciences</option>
+                                                                                    <option value="Continuous Learning" @if($project->centre == "Continuous Learning") {{'selected = selected'}}@endif>Continuous Learning</option>
+                                                                                    <option value="International" @if($project->centre == "International") {{'selected = selected'}}@endif>International</option>
+                                                                                    <option value="Preparatory and Liberal Studies" @if($project->centre == "Preparatory and Liberal Studies") {{'selected = selected'}}@endif> Preparatory and Liberal Studies</option>
+                                                                                    <option value="Arts and Design" @if($project->centre == "Arts and Design") {{'selected = selected'}}@endif>Arts and Design</option>
+                                                                                    <option value="Community Services & Early Childhood" @if($project->centre == "Community Services & Early Childhood") {{'selected = selected'}}@endif>Community Services & Early Childhood</option>
+                                                                                    <option value="Hospitality and Culinary Arts" @if($project->centre == "Hospitality and Culinary Arts") {{'selected = selected'}}@endif>Hospitality and Culinary Arts</option>
+                                                                                    <option value="Construction and Engineering Technologies" @if($project->centre == "Construction and Engineering Technologies") {{'selected = selected'}}@endif>Construction and Engineering Technologies</option>
+                                                                                    <option value="Business" @if($project->centre == "Business") {{'selected = selected'}}@endif>Business</option>
+                                                                                  </select>
+                                                                             </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                                                            <label class="col-xs-2 control-label lead" for="projectPartner">Project Partner</label>
+                                                                           <div class="col-xs-2">
+
+                                                                                     {{ Form::text('projectPartner',$project->projectPartner,array('class'=>' form-control float')) }}
+                                                                            </div>
+                                    </div>
+                                    <br>
                                  <div class="form-group">
                                    <label class="col-xs-2 control-label lead" for="summary">Description</label>
                                    <div class="col-xs-10">

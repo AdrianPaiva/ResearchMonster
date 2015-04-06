@@ -29,7 +29,7 @@
              <p  class="list-group-item btn btn-green">Projects</p>
              <a href="/projects"  class="list-group-item @if( $page == "projects") {{'active'}} @endif">All Projects</a>
 
-             <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Search Projects By Skill</a>
+             <a href="/projects/skillSearch" class="list-group-item @if( $page == "projects/skillSearch") {{'active'}} @endif" >Project Skills</a>
            <br>
               @if(Auth::user()->canCreateProjects() || Auth::user()->isStudent() )
                 <p href="#" class="list-group-item btn btn-green">My Projects </p>
@@ -57,7 +57,7 @@
             <div class="list-group">
                 <p  class="list-group-item btn btn-green">Popular Skills</p>
                         @foreach($skills as $skill)
-                            <a href="{{URL::to('projects/skillSearch/'. $skill->name)}}"  class="list-group-item ">{{$skill->name}}</a>
+                            <a href="{{URL::to('projects/skillSearch/'. $skill->name)}}"  class="list-group-item lead">{{$skill->name}}</a>
                         @endforeach
 
             </div>

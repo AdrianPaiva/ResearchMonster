@@ -60,8 +60,10 @@
                     <div class="well well-lg">
                         <h5 class="text-center text-capitalize text-primary">{{$proj->name}}</h5>
                         <br>
-                        <p class="text-capitalize"><b class="lead" >Posted By:</b>{{$proj->postedBy}} </p>
-                        <p class="text-capitalize"><strong class="lead">Date Posted:</strong> {{$proj->created_at}}</p>
+
+                        <h5 class="text-capitalize lead"><b>Project Partner:</b> {{$proj->projectPartner or "None"}}</h5>
+                        <h5 class="text-capitalize lead"><b>Centre:</b> {{$proj->centre or "None"}}</h5>
+                        <h5 class="text-capitalize lead"><b>Posted By:</b>{{$proj->postedBy}} </h5>
                         <hr>
                         <p>
                         <div class='summary'>
@@ -105,5 +107,5 @@
 
 @include('layouts/hr')
 
-<script type="text/javascript">$(document).ready(function(){$(".summary").shorten({"showChars" : 500});});</script>
+<script type="text/javascript">$(document).ready(function(){$(".summary").shorten({"showChars" : 300});});</script>
 @stop

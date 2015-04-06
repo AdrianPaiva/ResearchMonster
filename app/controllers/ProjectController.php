@@ -137,14 +137,19 @@ class ProjectController extends BaseController {
         $project->userId = Auth::user()->userId;
         $skillArray = explode(',', Input::get('hidden-tags'));
         //$project->skills = serialize($skillArray);
-
+        $project->centre = Input::get("centre");
+        $project->projectPartner = Input::get("projectPartner");
         $project->save();
         foreach ($skillArray as $skill) {
-            $sk = new Skill();
-            $sk->name = $skill;
-            $sk->save();
+            if($skill !== "")
+            {
+                $sk = new Skill();
+                $sk->name = $skill;
+                $sk->save();
 
-            $project->skills()->attach($sk->id);
+                $project->skills()->attach($sk->id);
+            }
+
 
         }
 
@@ -196,6 +201,8 @@ class ProjectController extends BaseController {
         $project->postedBy = Auth::user()->profile->firstName . " " . Auth::user()->profile->lastName;
         $project->summary = Input::get('summary');
         $project->experience = Input::get('experience');
+        $project->centre = Input::get("centre");
+        $project->projectPartner = Input::get("projectPartner");
 
         $skillArray = explode(',', Input::get('hidden-tags'));
         //$project->skills = serialize($skillArray);
@@ -215,11 +222,15 @@ class ProjectController extends BaseController {
         $project->save();
 
         foreach ($skillArray as $skill) {
-            $sk = new Skill();
-            $sk->name = $skill;
-            $sk->save();
+            if($skill !== "")
+            {
+                $sk = new Skill();
+                $sk->name = $skill;
+                $sk->save();
 
-            $project->skills()->attach($sk->id);
+                $project->skills()->attach($sk->id);
+            }
+
 
         }
         $project->save();

@@ -21,7 +21,7 @@
                 <div class="col-xs-6">
                         <h5 class="lead">{{{$profile->firstName or "First "}}} {{{$profile->lastName or "Last "}}}</h5>
                         <h5 class="lead">{{{$profile->userId or "User ID"}}}</h5>
-                        <h5 class="lead">{{{$profile->program or "Please select your program"}}}</h5>
+                        <h5 class="lead">{{{$profile->program or "No program selected"}}}</h5>
                         <h5 class="lead">{{{$email or " "}}}</h5>
                 </div>
 

@@ -14,25 +14,28 @@
 
             <div class="row">
 
-                <div class="col-xs-10">
+                <div class="col-xs-9">
                       <p class="text-capitalize"><strong>Posted By:</strong> {{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</p>
                       <p><strong>Email:</strong> {{$project->user->email}}</p>
                       <p><strong>Date Posted:</strong> {{$project->created_at}}</p>
+                      <br>
+                      <p><strong>Project Partner:</strong> {{$project->projectPartner}}</p>
+                      <p><strong>Centre:</strong> {{$project->centre}}</p>
                 </div>
 
 
 
-                <div class="col-xs-2">
+                <div class="col-xs-3">
                     @if(Auth::user()->isStudent())
                      <a href="{{URL::to('projects/apply/'.$project->id)}}" class="btn btn-green col-xs-offset-2 ">Apply</a>
                     @endif
-                    @if(Auth::user()->isResearcher() && $project->userId == Auth::user()->userId)
+                    @if(Auth::user()->isResearcher() && $project->userId == Auth::user()->userId || Auth::user()->isAdmin())
                      <a href="{{URL::to('projects/editProject/'. $project->id)}}" class="btn btn-yellow">Edit</a>
                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
 
                     @endif
-                    @if(Auth::user()->isProfessor())
-                     <a href="{{URL::to('projects/recommend/'. $project->id)}}" class="btn btn-yellow pull-right">Recommend Students</a>
+                    @if(Auth::user()->canRecommend())
+                     <a href="{{URL::to('projects/recommend/'. $project->id)}}" class="btn btn-green pull-right">Recommend Students</a>
                     @endif
                 </div>
 
@@ -47,12 +50,12 @@
              <hr>
               <strong><p><u>Experience Required</u></p></strong>
                  <p>
-                    {{$project->experience}}
+                    {{$project->experience or "No experience required"}}
                  </p>
                 <hr>
               <strong><p><u>Skills Required</u></p></strong>
 
-              @if($project->skills != null)
+              @if(is_object($project->skills))
                 @foreach($project->skills as $skill)
                      <p class="btn btn-sm btn-green"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{$skill->name}}</p>
                 @endforeach

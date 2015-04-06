@@ -21,6 +21,30 @@
                                       </div>
                                     </div>
                                     <br>
+                                    <div class="form-group">
+                                       <label class="col-xs-2 control-label lead" for="centre">Centre</label>
+                                         <div class="col-xs-2">
+                                              <select name="centre" id="centre">
+                                                <option value="Health Sciences">Health Sciences</option>
+                                                <option value="Continuous Learning">Continuous Learning</option>
+                                                <option value="International">International</option>
+                                                <option value="Preparatory and Liberal Studies"> Preparatory and Liberal Studies</option>
+                                                <option value="Arts and Design">Arts and Design</option>
+                                                <option value="Community Services & Early Childhood">Community Services & Early Childhood</option>
+                                                <option value="Hospitality and Culinary Arts">Hospitality and Culinary Arts</option>
+                                                <option value="Construction and Engineering Technologies">Construction and Engineering Technologies</option>
+                                                <option value="Business">Business</option>
+                                              </select>
+                                         </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label lead" for="projectPartner">Project Partner</label>
+                                       <div class="col-xs-2">
+                                                 <input id="projectPartner" name="projectPartner" type="text" placeholder="Project Partner" class="form-control float">
+                                        </div>
+                                     </div>
+                                     <br>
                                  <div class="form-group">
                                    <label class="col-xs-2 control-label lead" for="summary">Description</label>
                                    <div class="col-xs-10">

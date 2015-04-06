@@ -131,4 +131,24 @@ class UserController extends BaseController{
 
         }
     }
+    public function programSearch()
+    {
+
+        $users = User::all()->filter(function ($user)
+        {
+            $programs = Input::get('programs');
+            foreach($programs as $program)
+            {
+                if($user->profile->program === $program)
+                {
+                    return true;
+                }
+            }
+        });
+
+
+        return View::make('users.users')->with("title",'Users')->with('users',$users);
+    }
+
+
 }

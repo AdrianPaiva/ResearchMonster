@@ -75,9 +75,20 @@ Route::group(array('before' => 'auth|canViewUsers'), function () {
     Route::get('users', 'UserController@showAllStudents');
     Route::get('users/viewProfile/{id}', 'ProfileController@showUserProfile');
 
+    Route::get('users/programSearch', function ()
+    {
+        $programs = DB::table('user_profiles')
+            ->select('program')
+            ->groupBy('program')
+            ->get();
+        return View::make('users.programSearch')->with('title', "Program Search")->with('programs',$programs);
+    });
+    Route::post('users/programSearch', 'UserController@programSearch');
+
+
 });
 
-Route::group(array('before' => 'auth|isProfessor'), function () {
+Route::group(array('before' => 'auth|canRecommend'), function () {
 
     Route::get('projects/recommend/{id}', function ($id) {
         $title = 'Recommend Students';

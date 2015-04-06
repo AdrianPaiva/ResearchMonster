@@ -78,11 +78,15 @@ class ProfileController extends BaseController
 
         foreach($skillArray as $skill)
         {
-            $sk = new Skill();
-            $sk->name = $skill;
-            $sk->save();
+            if($skill !== "")
+            {
+                $sk = new Skill();
+                $sk->name = $skill;
+                $sk->save();
 
-            $user->skills()->attach($sk->id);
+                $user->skills()->attach($sk->id);
+            }
+
 
         }
 

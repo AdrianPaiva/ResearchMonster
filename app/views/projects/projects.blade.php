@@ -26,7 +26,7 @@
                       @foreach($projects as $project)
                          <tr>
 
-                           <td>{{$project->name}}</td>
+                           <td class="lead">{{$project->name}}</td>
                            <td class="summary">{{$project->summary}}</td>
                            <td>{{$project->user->profile->firstName}} {{$project->user->profile->lastName}}</td>
                            <td>{{$project->created_at}}</td>
@@ -63,7 +63,7 @@
 <script type="text/javascript" >
     $(document).ready(function () {
         $('.table').DataTable({
-            "pageLength": 25,
+            "pageLength": 10,
             "columnDefs": [
                 { "searchable": false, "targets": 5}
               ],

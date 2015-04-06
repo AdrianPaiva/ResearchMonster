@@ -92,7 +92,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function canRecommend()
     {
-        if ($this->attributes['role'] == 'professor' ) {
+        if ($this->attributes['role'] == 'professor' || $this->attributes['role'] == 'researcher' || $this->attributes['role'] == 'admin') {
             return true;
         }
         return false;

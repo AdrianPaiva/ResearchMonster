@@ -109,6 +109,18 @@ Route::filter('canViewUsers', function () {
     }
 });
 
+Route::filter('canRecommend', function () {
+
+    if (!Auth::user()->canRecommend()) {
+
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('/');
+        }
+    }
+});
+
 
 Route::filter('auth.basic', function()
 {
