@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2015 at 03:14 AM
+-- Generation Time: Apr 08, 2015 at 01:55 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -99,6 +99,13 @@ CREATE TABLE IF NOT EXISTS `password_reminders` (
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `password_reminders`
+--
+
+INSERT INTO `password_reminders` (`email`, `token`, `created_at`) VALUES
+('apaiva@georgebrown.ca', '04896069e0128320f77a2632a68b1a15b1d11750', '2015-04-07 02:33:20');
 
 -- --------------------------------------------------------
 
@@ -371,7 +378,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `confirmation_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'user',
+  `role` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'student',
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
@@ -387,8 +394,8 @@ INSERT INTO `users` (`userId`, `password`, `email`, `confirmed`, `confirmation_c
 (12345644, '$2y$10$4UW5D/ohHm.3mOiO2L7x7.prKVyq8NaVUbPs8FDsNrDP8Hz2Mkf.e', 'ad@gmail.com', 1, NULL, 'student', '2h2degej0qjSDEBUXjeNJgp4w9gdqIPUvUJwgWV8xDbMrW5jnWUvqbT58z9U', '2015-03-27 23:01:44', '2015-03-28 03:56:01'),
 (12345645, '$2y$10$7L00GxLJpo/o5N6qpd3TFOnYziNAWxbcgL1J6PbRZW4Lj1eWN73Ge', 'aaaaad@gmail.com', 1, NULL, 'student', 'VJXsHs44AB9WdPdBFr5A69Uab9ccxE3S7VKN0xrdgGeh0QQQCHcHExOIRyEc', '2015-03-27 23:01:44', '2015-04-06 05:00:17'),
 (12345666, '$2y$10$d2xNnsWwPlNoiQ.mD1SIRue2.j2U1o8v7ehcN6rxIljSORegzc33.', 'adria1@gmail.com', 1, NULL, 'student', 'CPcBFaHEOjVujtwydFGILCp0bdgggEtidGtAGWJ0JYc3W0pFLVXadake0tcS', '2015-03-27 23:01:44', '2015-04-06 05:02:22'),
-(12345677, '$2y$10$6aStKcQnZIcd3seJ0ZI80Ovq8Jpj/d4gRZu0Y6yfV4AWotUmjYp6i', 'adriaa1@gmail.com', 1, NULL, 'student', NULL, '2015-03-27 23:01:44', '2015-03-27 23:01:44'),
-(12345678, '$2y$10$ObKdPVaPhHp/orwM7EvCpesksm64tK6QKEUqXjWLdfjXW7X2wxbbq', 'adra1@gmail.com', 1, NULL, 'researcher', '9kIIXGwW21i08NPMCFaKAdjU9zi2bMJDhkH2F6n7JZpSoexO2jSiNHIWjJZh', '2015-03-27 23:01:43', '2015-03-28 05:50:41'),
+(12345677, '$2y$10$dU4XLeWiMtg7jZWHwsyxcOXmnxv.cc5ziW9F4gJqv5KBkj74umylu', 'kalamazoo2@outlook.com', 1, NULL, 'student', NULL, '2015-03-27 23:01:44', '2015-04-07 02:35:00'),
+(12345678, '$2y$10$ObKdPVaPhHp/orwM7EvCpesksm64tK6QKEUqXjWLdfjXW7X2wxbbq', 'adra1@gmail.com', 1, NULL, 'researcher', '5TYXNCHzbQrzGjqolltVvUCq55KPIeTvVw0yJXukFpRA3dXDP5APCL925Ssy', '2015-03-27 23:01:43', '2015-04-07 02:29:54'),
 (123456788, '$2y$10$4c9e3zvNnaAwHeLkl.0Yn.udJv545S.xGrFiO0yFKXSkptPki7iiK', 'adria@gmail.com', 1, NULL, 'professor', NULL, '2015-03-27 23:01:44', '2015-03-27 23:01:44'),
 (123456789, '$2y$10$GU8Otz5vPD0AKipya0RvuOa.EXczeq5vO.bfnDKvzBnBU7v8OOBVi', 'adrianpaiva1@gmail.com', 1, NULL, 'admin', 'gUYzxrg80S7XDxeTTHjGbjXLgEv4s6i6ldABOa7i7XK35akMPDnswoGWbw99', '2015-03-27 23:01:43', '2015-04-06 04:46:47');
 

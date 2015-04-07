@@ -20,7 +20,7 @@ class CreateUserTable extends Migration {
             $table->string('email')->unique();
             $table->boolean('confirmed')->default(0);
             $table->string('confirmation_code')->nullable();
-            $table->string('role')->default('user');
+            $table->string('role')->default('student');
             $table->rememberToken();
             $table->timestamps();
 
