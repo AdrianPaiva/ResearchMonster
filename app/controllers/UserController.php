@@ -99,7 +99,7 @@ class UserController extends BaseController{
     public function doLogin()
     {
         $rules = array(
-            'userId'    => 'required|alphaNum|min:8|exists:users',
+            'userId'    => 'required|alphaNum|min:6|exists:users',
             'userPassword' => 'required'
         );
 
